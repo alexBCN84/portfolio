@@ -1,0 +1,343 @@
+@import "variables";
+@import "mixins";
+
+// main styles
+
+body {
+  font: 16px/1.4em 'PT Sans', sans-serif;;
+  color: $codGray;
+}
+
+p,ul { margin: 0 0 1.5em }
+
+ul {
+  padding: 0 0 0 20px;
+}
+
+a { color: inherit }
+h1 { line-height: 1.4em }
+h2 {
+  font-family: 'PT Serif', serif;
+  font-size: 2em;
+  line-height: 1.4em;
+  margin: 0 0 0.4em;
+  font-weight: bold;
+}
+
+article {
+  border-bottom: 1px solid $gallery;
+  padding: 10px 20px 0 20px;
+  margin: 10px 0;
+}
+
+
+/*layout*/
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
+/* aditional classes */
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: $tundora;
+}
+
+.typewrite {
+  color:#000;
+  text-decoration: none;
+}
+
+.section-heading {
+  li {
+    display: inline-block;
+    font-size: 1.5em;
+  }
+  li:nth-child(2) {
+    float: right;
+    margin-right: 5%;
+  }
+  margin: 0;
+  padding: 0;
+}
+
+
+.scroll-wrapper {
+  background: inherit;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 20px !important;
+  width: 90%;
+}
+.scrolls {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: auto;
+  white-space:nowrap;
+
+  article {
+    display: inline-block;
+    @include center;
+    width: 100%;
+    height: 480px;
+    padding: 0;
+    border-bottom: none;
+    i {
+      transform: scale(1, 2);
+      margin-top: 48%;
+    }
+  }
+  blockquote {
+    display: block;
+    width: 82%;
+    margin: 2px;
+    height: auto;
+    padding: 2%;
+    cursor: pointer;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    vertical-align: top;
+    white-space: initial;
+  }
+  p {
+    padding-left: 1%;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    transform: scale(1, 1.1);
+    quotes: "\201C""\201D""\2018""\2019";
+    color: $gallery;
+    &:before {
+      content: open-quote;
+      font-size: 2.5em;
+      line-height: 0.1em;
+      margin-right: 0.20em;
+      vertical-align: -0.4em;
+    }
+    &:after {
+      content: close-quote;
+      font-size: 2.5em;
+      line-height: 0.1em;
+      margin-left: 0.20em;
+      vertical-align: -0.5em;
+    }
+  }
+
+
+  img {
+    border-radius: 50px;
+  }
+  h3{
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+  }
+}
+
+
+
+
+/*header*/
+
+header {
+  background: inherit;
+  padding: 15px 20px;
+  // For IE 6/7 (trigger hasLayout)
+  zoom:1;
+  /*shorter clearfix http://nicolasgallagher.com/micro-clearfix-hack/*/
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after { clear: both }
+}
+
+#logo {
+  i {
+    margin-top: -8px;
+    float: left;
+    height: 45px;
+    width: 50px;
+    background: url("../img/logo.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  span {
+    margin-left: 12px;
+    @include navTags;
+    color: $tundora;
+    font-size: 0.9em;
+    float: left;
+    line-height: 15px;
+    letter-spacing: 0.2em;
+
+  }
+}
+
+a.to_nav {
+  @include navTags;
+  float: right;
+  color: white;
+  background: $tundora;
+  padding: 8px;
+  font-size: 0.8em;
+  height: 10px;
+  line-height: 10px;
+  letter-spacing: 0.1em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  &:hover, &:focus {
+    color: $codGray;
+    background: $gallery;
+  }
+}
+
+/*navigation*/
+
+#primary_nav {
+  ul {
+    background: $codGray;
+    padding: 5px 0;
+  }
+  li {
+    @include center;
+    &:last-child a { border-bottom: none }
+  }
+  a {
+    display: block;
+    padding: 0 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+    height: 2em;
+    border-bottom: 1px solid $mineShaft;
+    &:hover, &:focus {
+      color: $codGray;
+      background: $gallery;
+    }
+  }
+}
+#cover {
+  height: auto;
+  img { width: 100% }
+  position: relative;
+  h1 {
+    position: absolute;
+    display: block;
+    font-size: 1.2em;
+    left: 5%;
+    top: 78%;
+    color: #fff;
+  }
+  #cover-footer {
+    height: 50px;
+    width: 100%;
+    margin-top: -7px;
+    padding-top: 7px;
+    color: white;
+    background-color: $tundora;
+  }
+  #submenu {
+    height: 30px;
+    width: 100%;
+  }
+  a {
+    height: inherit;
+    @include grid(3, 0);
+    @include center;
+    color: white;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 30px;
+    //transform:scale(letterWidth, letterHeigth);
+    transform: scale(1, 1.1);
+    font-weight: 900;
+    background-color: $mineShaft;
+    &:hover {
+      background: lighten($tundora, 9);
+      color: complement(#fff);
+    }
+  }
+}
+
+#typewriter1 {
+  height: 67px;
+  h1 {
+    @include center;
+    font: bold 1.3em Consolas, Monaco, monospace;
+	  width: 90%;
+    margin: 25px 5%;
+  }
+  span {
+    color: $mineShaft;
+  }
+}
+
+#intro {
+  margin: 25px 5%;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  @include center;
+  li {
+    letter-spacing: 0.1em;
+  }
+}
+
+#testimonials {
+  background-color: $tundora;
+  color: $gallery;
+  @include homeSectionDisplay;
+  .scrolling-controls ul {
+    padding: 0;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+#code-gallery {
+  background-color: $gallery;
+  color: $tundora;
+  @include homeSectionDisplay;
+  .scrolling-controls ul {
+    background-color: $codGray;
+    color: #fff;
+    padding-left: 0;
+  }
+  @include codeGalleryStyles;
+}
+
+/*footer*/
+
+footer {
+  height: 50px;
+  font-family: $footerFont;
+  font-size: 0.8em;
+  border-top: solid 1px $gallery;
+  p {
+    height: inherit;
+    @include grid(3, 0);
+    @include center;
+    line-height: 50px;
+    font-variant: small-caps;
+  }
+  span { transform: scale(1.0, 0.5) }
+  #social { font-size: 1.8em }
+}
+
+@import "mediaQueries";

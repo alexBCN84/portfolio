@@ -1,0 +1,111 @@
+// text mixins
+
+@mixin center {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+@mixin navTags {
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+@mixin mQ($arg...) {
+  @if length($arg) == 1 {
+    @media screen and (min-width: nth($arg, 1)) {
+      @content;
+    }
+  }
+  @if length($arg) == 2 {
+    @media screen and (min-width: nth($arg, 1)) and (max-width: nth($arg, 2)){
+      @content;
+    }
+  }
+}
+
+@mixin grid($cols, $mgn) {
+  float: left;
+  margin-right: $mgn;
+  margin-bottom: $mgn;
+  width: ((100% - (($cols - 1) * $mgn)) / $cols );
+  &:nth-child(#{$cols}n) {
+    margin-right: 0;
+  }
+}
+
+@mixin layerIndex-1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+// @mixin standardButton {
+//   @include navTags;
+//   padding: 8px;
+//   font-size: 1em;
+//   height: 10px;
+//   line-height: 10px;
+//   letter-spacing: 0.1em;
+//   border: 2px solid #fff;
+//   -webkit-border-radius: 3px;
+//   -moz-border-radius: 3px;
+//   border-radius: 3px;
+//   &:hover, &:focus {
+//     color: $silver;
+//     background: $codGray;
+//     border: $mineShaft;
+//   }
+// }
+
+@mixin typingKeyframes {
+  @-webkit-keyframes typing { from { width: 0; } }
+  @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+}
+
+@mixin homeSectionDisplay {
+  padding: 5% 0;
+  ul {
+    font-size: 1.2em;
+    padding-left: 5%;
+    letter-spacing: 0.1em;
+  }
+}
+
+@mixin codeGalleryStyles {
+  .var-highlight {
+    color: $hippieBlue;
+  }
+  .string-highlight {
+      color: $tamarilo;
+  }
+
+  #typewriter {
+    font-size: 1em;
+    margin: 0;
+    font-family: "Courier New";
+
+    &:after {
+        content: "|";
+        animation: blink 500ms linear infinite alternate;
+    }
+  }
+
+  @-webkit-keyframes blink {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @-moz-keyframes blink {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+  }
+
+  @keyframes blink {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+  }
+}

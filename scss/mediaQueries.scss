@@ -1,0 +1,45 @@
+@media only screen and (min-width: 321px) {
+  //Larger mobile styles (wider than 320 pixels)
+}
+
+@media only screen and (min-width: 600px) {
+  //Tablet styles (wider than 600 pixels)
+}
+
+
+@media only screen and (min-width: 768px) {
+  // Small laptop styles (wider than 768px pixels)
+  a.to_nav { display: none }
+
+  #primary_nav {
+    ul { background: none }
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: inherit;
+    margin: inherit;
+    max-width: inherit;
+    background: none;
+    li { display: inline }
+    a {
+      float: left;
+      border: none;
+      padding: 0 10px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      border-bottom: none;
+      color: $tundora;
+    }
+    .top { display: none }
+  }
+}
+
+
+@media only screen and (min-width: 1024px) {
+  // Large laptop styles (wider than 1024 pixels)
+}
+
+@media only screen and (min-width: 1140px) {
+  // Desktop styles (wider than 1140 pixels)
+}
