@@ -12,8 +12,8 @@
 
 
     <!--css-->
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -30,13 +30,13 @@
         <a class="to_nav smooth" href="#primary_nav">menu <i class="fa fa-angle-down"></i></a>
       </header>
       <section id="cover">
-        <img src="../img/avatar-skills.svg" alt="profile">
+        <img src="img/avatar-skills.svg" alt="profile">
         <h1>I am a Front End &<br/>Ruby on Rails Developer</h1>
         <div id="cover-footer">
         </div>
         <div id="submenu">
           <a href="#testimonials" class="smooth">testimonials <i class="fa fa-quote-right"></i></a>
-          <a href="#code-gallery" class="smooth">code gallery <i class="fa fa-code"></i></a>
+          <a href="#featured-code" class="smooth">featured code <i class="fa fa-code"></i></a>
           <a href="mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com." rolle="button">contact me <i class="fa fa-envelope-o"></i></a>
         </div>
       </section>
@@ -61,13 +61,13 @@
           <li>
             <span>
               <a href="#home" class="smooth"><i class="fa fa-angle-up"></i></a>
-              <a href="#code-gallery" class="smooth"><i class="fa fa-angle-down"></i></a>
+              <a href="#featured-code" class="smooth"><i class="fa fa-angle-down"></i></a>
             </span>
           </li>
         </ul>
         <div class="scroll-wrapper">
           <div id="scroll-testimonials" class="scrolls">
-             <article id="ref1">
+             <!-- <article id="ref1">
                <blockquote>
                 <a href="https://www.linkedin.com/in/akochegura/"><img src="../img/Anna_kochegura.jpg" alt="" /></a>
                 <h2>Anna Kochegura</h2>
@@ -105,14 +105,14 @@
                 <h3>Tech Placement Specialist<br/>at CareerFoundry</h3></br>
                  <p>Alejandro is super helpful, caring, on the job, finishes everything timely and never fails to ask precise questions. I find it very effective and progressive to work with him besides the fact that he is a very great colleague.</p>
                </blockquote>
-             </article>
+             </article> -->
           </div>
         </div>
       </section>
-      <section id="code-gallery">
+      <section id="featured-code">
         <ul class="section-heading">
           <li>
-            <h1>Code Gallery</h1>
+            <h1>Featured code</h1>
           </li>
           <li>
             <span>
@@ -122,40 +122,8 @@
           </li>
         </ul>
         <div class="scroll-wrapper">
-          <div class="scrolls">
-            <article id="ref1">
-              <blockquote><pre id="typewriter"><span class="var-highlight">var</span> object = {
-  name: <span class="string-highlight">'Foo'</span>,
-  type: <span class="string-highlight">'Bar'</span>,
-      location: <span class="string-highlight">'Earth'</span>,
-      properties:[<span class="string-highlight">'Javascript'</span>,
-  <span class="string-highlight">'HTML'</span>,
-                 <span class="string-highlight">'CSS'</span>];
-                 };
-               </pre>
-              </blockquote>
-              <a href="#ref2" class="smooth-left"><i class="fa fa-angle-double-right"></i></a>
-            </article>
-            <article id="ref2">
-              <a href="#ref1" class="smooth-left"><i class="fa fa-angle-double-left"></i></a>
-              <blockquote>
-               <img src="https://unsplash.it/100/100/?random" alt="" />
-                <h2>Uleshka <br/>Asher</h2>
-                <h3>Communications & Brand Consulting <br/>at Zalando SE</h3></br>
-                <p>Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.</p>
-              </blockquote>
-              <a href="#ref3" class="smooth-left"><i class="fa fa-angle-double-right"></i></a>
-            </article>
-            <article id="ref3" class="smooth-left">
-              <a href="#ref2" class="smooth-left"><i class="fa fa-angle-double-left"></i></a>
-              <blockquote>
-               <img src="https://unsplash.it/100/100/?random" alt="" />
-               <h2>Uleshka <br/>Asher<br/><a href="https://www.linkedin.com/in/uleshka-asher-9096384/"><i class="fa fa-linkedin-square"></i></a></h2>
-               <h3>Communications & Brand Consulting <br/>at Zalando SE</h3></br>
-                <p>Alejandro is super helpful, caring, on the job, finishes everything timely and never fails to ask precise questions. I find it very effective and progressive to work with him besides the fact that he is a very great colleague.</p>
-              </blockquote>
-            </article>
-
+          <div id="scroll-featured-code" class="scrolls">
+          <!-- here we're placing the handlebars -->
           </div>
         </div>
       </section>
@@ -186,9 +154,8 @@
 
     <!-- script tags with JavaScript files here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/effects.js"></script>
-    </script>
+    <script type="text/javascript" src="js/templateViews.js"></script>
+    <script type="text/javascript" src="js/effects.js"></script>
 
-    </script>
   </body>
 </html>

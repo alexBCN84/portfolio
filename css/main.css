@@ -359,68 +359,40 @@ a.to_nav:hover, a.to_nav:focus {
   height: 100px;
 }
 
-#code-gallery {
+#featured-code {
   background-color: #eeeeee;
   color: #4e4e4e;
   padding: 5% 0;
 }
 
-#code-gallery ul {
+#featured-code ul {
   font-size: 1.2em;
   padding-left: 5%;
   letter-spacing: 0.1em;
 }
 
-#code-gallery .scrolling-controls ul {
+#featured-code .scrolling-controls ul {
   background-color: #1c1c1c;
   color: #fff;
   padding-left: 0;
 }
 
-#code-gallery .var-highlight {
+#featured-code .var-highlight {
   color: #5f96ac;
 }
 
-#code-gallery .string-highlight {
+#featured-code .string-highlight {
   color: #a00e0e;
 }
 
-#code-gallery #typewriter {
-  font-size: 1em;
+#featured-code pre {
+  text-align: left;
+  height: auto;
   margin: 0;
+  font-size: 1em;
   font-family: "Courier New";
-}
-
-#code-gallery #typewriter:after {
-  content: "|";
-  animation: blink 500ms linear infinite alternate;
-}
-
-@-webkit-keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  white-space: pre-wrap;
+  overflow: auto;
 }
 
 /*footer*/

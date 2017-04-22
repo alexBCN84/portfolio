@@ -310,7 +310,7 @@ a.to_nav {
   }
 }
 
-#code-gallery {
+#featured-code {
   background-color: $gallery;
   color: $tundora;
   @include homeSectionDisplay;
@@ -319,7 +319,7 @@ a.to_nav {
     color: #fff;
     padding-left: 0;
   }
-  @include codeGalleryStyles;
+  @include featuredCodeStyles;
 }
 
 /*footer*/
