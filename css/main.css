@@ -69,88 +69,6 @@ article {
   margin-right: 5%;
 }
 
-.scroll-wrapper {
-  background: inherit;
-  margin: 20px auto;
-  text-align: center;
-  position: relative;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  margin-bottom: 20px !important;
-  width: 90%;
-}
-
-.scrolls {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  height: auto;
-  white-space: nowrap;
-}
-
-.scrolls article {
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  width: 100%;
-  height: 480px;
-  padding: 0;
-  border-bottom: none;
-}
-
-.scrolls article i {
-  transform: scale(1, 2);
-  margin-top: 48%;
-}
-
-.scrolls blockquote {
-  display: block;
-  width: 82%;
-  margin: 2px;
-  height: auto;
-  padding: 2%;
-  cursor: pointer;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  vertical-align: top;
-  white-space: initial;
-}
-
-.scrolls p {
-  padding-left: 1%;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  transform: scale(1, 1.1);
-  quotes: "“" "”" "‘" "’";
-  color: #eeeeee;
-}
-
-.scrolls p:before {
-  content: open-quote;
-  font-size: 2.5em;
-  line-height: 0.1em;
-  margin-right: 0.20em;
-  vertical-align: -0.4em;
-}
-
-.scrolls p:after {
-  content: close-quote;
-  font-size: 2.5em;
-  line-height: 0.1em;
-  margin-left: 0.20em;
-  vertical-align: -0.5em;
-}
-
-.scrolls img {
-  border-radius: 50px;
-}
-
-.scrolls h3 {
-  font-variant: small-caps;
-  letter-spacing: 0.1em;
-}
-
 /*header*/
 header {
   background: inherit;
@@ -289,7 +207,7 @@ a.to_nav:hover, a.to_nav:focus {
   text-align: center;
   vertical-align: middle;
   color: white;
-  font-size: 0.75em;
+  font-size: 0.65em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   line-height: 30px;
@@ -344,12 +262,6 @@ a.to_nav:hover, a.to_nav:focus {
   padding: 5% 0;
 }
 
-#testimonials ul {
-  font-size: 1.2em;
-  padding-left: 5%;
-  letter-spacing: 0.1em;
-}
-
 #testimonials .scrolling-controls ul {
   padding: 0;
 }
@@ -359,10 +271,111 @@ a.to_nav:hover, a.to_nav:focus {
   height: 100px;
 }
 
+#testimonials ul {
+  font-size: 1.2em;
+  padding-left: 5%;
+  letter-spacing: 0.1em;
+}
+
+#testimonials .scroll-wrapper {
+  background: inherit;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 20px !important;
+  width: 90%;
+}
+
+#testimonials .scrolls {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: auto;
+  white-space: nowrap;
+}
+
+#testimonials .scrolls article {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border-bottom: none;
+}
+
+#testimonials .scrolls article .arrow-testimonials {
+  margin-top: 48%;
+  transform: scale(1, 2);
+}
+
+#testimonials .scrolls article .arrow-code {
+  margin-top: 9%;
+  transform: scale(1, 2);
+}
+
+#testimonials .scrolls blockquote {
+  display: block;
+  width: 82%;
+  margin: 2px;
+  padding: 2%;
+  cursor: pointer;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  white-space: initial;
+}
+
+#testimonials .scrolls p {
+  padding-left: 1%;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  transform: scale(1, 1.1);
+  quotes: "“" "”" "‘" "’";
+}
+
+#testimonials .scrolls p:before {
+  content: open-quote;
+  font-size: 2.5em;
+  line-height: 0.1em;
+  margin-right: 0.20em;
+  vertical-align: -0.4em;
+}
+
+#testimonials .scrolls p:after {
+  content: close-quote;
+  font-size: 2.5em;
+  line-height: 0.1em;
+  margin-left: 0.20em;
+  vertical-align: -0.5em;
+}
+
+#testimonials .scrolls img {
+  border-radius: 50px;
+}
+
+#testimonials .scrolls h3 {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+}
+
+#testimonials p {
+  color: #eeeeee;
+}
+
 #featured-code {
   background-color: #eeeeee;
   color: #4e4e4e;
   padding: 5% 0;
+}
+
+#featured-code .scrolling-controls ul {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding-left: 0;
 }
 
 #featured-code ul {
@@ -371,10 +384,89 @@ a.to_nav:hover, a.to_nav:focus {
   letter-spacing: 0.1em;
 }
 
-#featured-code .scrolling-controls ul {
-  background-color: #1c1c1c;
-  color: #fff;
-  padding-left: 0;
+#featured-code .scroll-wrapper {
+  background: inherit;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 20px !important;
+  width: 90%;
+}
+
+#featured-code .scrolls {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: auto;
+  white-space: nowrap;
+}
+
+#featured-code .scrolls article {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border-bottom: none;
+}
+
+#featured-code .scrolls article .arrow-testimonials {
+  margin-top: 48%;
+  transform: scale(1, 2);
+}
+
+#featured-code .scrolls article .arrow-code {
+  margin-top: 9%;
+  transform: scale(1, 2);
+}
+
+#featured-code .scrolls blockquote {
+  display: block;
+  width: 82%;
+  margin: 2px;
+  padding: 2%;
+  cursor: pointer;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  white-space: initial;
+}
+
+#featured-code .scrolls p {
+  padding-left: 1%;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  transform: scale(1, 1.1);
+  quotes: "“" "”" "‘" "’";
+}
+
+#featured-code .scrolls p:before {
+  content: open-quote;
+  font-size: 2.5em;
+  line-height: 0.1em;
+  margin-right: 0.20em;
+  vertical-align: -0.4em;
+}
+
+#featured-code .scrolls p:after {
+  content: close-quote;
+  font-size: 2.5em;
+  line-height: 0.1em;
+  margin-left: 0.20em;
+  vertical-align: -0.5em;
+}
+
+#featured-code .scrolls img {
+  border-radius: 50px;
+}
+
+#featured-code .scrolls h3 {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
 }
 
 #featured-code .var-highlight {
@@ -385,14 +477,37 @@ a.to_nav:hover, a.to_nav:focus {
   color: #a00e0e;
 }
 
+#featured-code .naming-highlight {
+  color: #ffdd02;
+}
+
 #featured-code pre {
+  tab-size: 10px;
+  padding: -10px;
   text-align: left;
   height: auto;
+  background: #eeeeee;
   margin: 0;
-  font-size: 1em;
-  font-family: "Courier New";
-  white-space: pre-wrap;
+  font-size: 0.8em;
+  padding: 10px;
   overflow: auto;
+}
+
+#featured-code code {
+  white-space: auto;
+}
+
+#featured-code .fa-github-square {
+  transform: scale(1, 1.2);
+  margin-top: 10%;
+}
+
+#featured-code h2 {
+  color: #5f96ac;
+}
+
+#featured-code p {
+  color: #a00e0e;
 }
 
 /*footer*/
@@ -425,6 +540,14 @@ footer span {
 
 footer #social {
   font-size: 1.8em;
+}
+
+footer #linkedin {
+  margin-left: 20%;
+}
+
+footer #github {
+  margin-rigth: 20%;
 }
 
 @media only screen and (min-width: 768px) {

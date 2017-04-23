@@ -43,24 +43,6 @@
   z-index: -1;
 }
 
-// @mixin standardButton {
-//   @include navTags;
-//   padding: 8px;
-//   font-size: 1em;
-//   height: 10px;
-//   line-height: 10px;
-//   letter-spacing: 0.1em;
-//   border: 2px solid #fff;
-//   -webkit-border-radius: 3px;
-//   -moz-border-radius: 3px;
-//   border-radius: 3px;
-//   &:hover, &:focus {
-//     color: $silver;
-//     background: $codGray;
-//     border: $mineShaft;
-//   }
-// }
-
 @mixin typingKeyframes {
   @-webkit-keyframes typing { from { width: 0; } }
   @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
@@ -75,21 +57,102 @@
   }
 }
 
+@mixin scrollingSection {
+  .scroll-wrapper {
+    background: inherit;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-bottom: 20px !important;
+    width: 90%;
+  }
+  .scrolls {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: auto;
+    white-space:nowrap;
+
+    article {
+      display: inline-block;
+      @include center;
+      width: 100%;
+      height: auto;
+      padding: 0;
+      border-bottom: none;
+      .arrow-testimonials {
+        margin-top: 48%;
+        transform: scale(1, 2);
+       }
+      .arrow-code {
+        margin-top: 9%;
+        transform: scale(1, 2);
+      }
+    }
+    blockquote {
+      display: block;
+      width: 82%;
+      margin: 2px;
+      padding: 2%;
+      cursor: pointer;
+      display:inline-block;
+      *display:inline;
+      *zoom:1;
+      vertical-align: top;
+      white-space: initial;
+    }
+    p {
+      padding-left: 1%;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      transform: scale(1, 1.1);
+      quotes: "\201C""\201D""\2018""\2019";
+      &:before {
+        content: open-quote;
+        font-size: 2.5em;
+        line-height: 0.1em;
+        margin-right: 0.20em;
+        vertical-align: -0.4em;
+      }
+      &:after {
+        content: close-quote;
+        font-size: 2.5em;
+        line-height: 0.1em;
+        margin-left: 0.20em;
+        vertical-align: -0.5em;
+      }
+    }
+
+
+    img { border-radius: 50px; }
+    h3{
+      font-variant: small-caps;
+      letter-spacing: 0.1em;
+    }
+  }
+}
+
 @mixin featuredCodeStyles {
-  .var-highlight {
-    color: $hippieBlue;
-  }
-  .string-highlight {
-      color: $tamarilo;
-  }
+  .var-highlight { color: $hippieBlue; }
+  .string-highlight { color: $tamarilo; }
+  .naming-highlight { color: $schoolBusYellow; }
 
   pre {
+    tab-size: 10px;
+    padding: -10px;
     text-align: left;
-    height: auto;
+    height:auto;
+    background: $gallery;
     margin: 0;
-    font-size: 1em;
-    font-family: "Courier New";
-    white-space: pre-wrap;
+    font-size: 0.8em;
+    padding: 10px;
     overflow: auto;
+  }
+  code { white-space: auto; }
+  .fa-github-square {
+    transform: scale(1.0, 1.2);
+    margin-top: 10%;
   }
 }

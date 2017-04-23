@@ -9,10 +9,10 @@
 
 @media only screen and (min-width: 768px) {
   // Small laptop styles (wider than 768px pixels)
-  a.to_nav { display: none }
+  a.to_nav { display: none; }
 
   #primary_nav {
-    ul { background: none }
+    ul { background: none; }
     position: absolute;
     top: 5px;
     right: 10px;
@@ -20,7 +20,7 @@
     margin: inherit;
     max-width: inherit;
     background: none;
-    li { display: inline }
+    li { display: inline; }
     a {
       float: left;
       border: none;
@@ -31,7 +31,7 @@
       border-bottom: none;
       color: $tundora;
     }
-    .top { display: none }
+    .top { display: none; }
   }
 }
 

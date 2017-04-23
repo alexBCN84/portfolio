@@ -8,14 +8,12 @@ body {
   color: $codGray;
 }
 
-p,ul { margin: 0 0 1.5em }
+p,ul { margin: 0 0 1.5em; }
 
-ul {
-  padding: 0 0 0 20px;
-}
+ul { padding: 0 0 0 20px; }
 
-a { color: inherit }
-h1 { line-height: 1.4em }
+a { color: inherit; }
+h1 { line-height: 1.4em; }
 h2 {
   font-family: 'PT Serif', serif;
   font-size: 2em;
@@ -65,84 +63,6 @@ article {
 }
 
 
-.scroll-wrapper {
-  background: inherit;
-  margin: 20px auto;
-  text-align: center;
-  position: relative;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  margin-bottom: 20px !important;
-  width: 90%;
-}
-.scrolls {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  height: auto;
-  white-space:nowrap;
-
-  article {
-    display: inline-block;
-    @include center;
-    width: 100%;
-    height: 480px;
-    padding: 0;
-    border-bottom: none;
-    i {
-      transform: scale(1, 2);
-      margin-top: 48%;
-    }
-  }
-  blockquote {
-    display: block;
-    width: 82%;
-    margin: 2px;
-    height: auto;
-    padding: 2%;
-    cursor: pointer;
-    display:inline-block;
-    *display:inline;
-    *zoom:1;
-    vertical-align: top;
-    white-space: initial;
-  }
-  p {
-    padding-left: 1%;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    transform: scale(1, 1.1);
-    quotes: "\201C""\201D""\2018""\2019";
-    color: $gallery;
-    &:before {
-      content: open-quote;
-      font-size: 2.5em;
-      line-height: 0.1em;
-      margin-right: 0.20em;
-      vertical-align: -0.4em;
-    }
-    &:after {
-      content: close-quote;
-      font-size: 2.5em;
-      line-height: 0.1em;
-      margin-left: 0.20em;
-      vertical-align: -0.5em;
-    }
-  }
-
-
-  img {
-    border-radius: 50px;
-  }
-  h3{
-    font-variant: small-caps;
-    letter-spacing: 0.1em;
-  }
-}
-
-
-
-
 /*header*/
 
 header {
@@ -155,7 +75,7 @@ header {
     content: "";
     display: table;
   }
-  &:after { clear: both }
+  &:after { clear: both; }
 }
 
 #logo {
@@ -208,7 +128,7 @@ a.to_nav {
   }
   li {
     @include center;
-    &:last-child a { border-bottom: none }
+    &:last-child a { border-bottom: none; }
   }
   a {
     display: block;
@@ -230,7 +150,7 @@ a.to_nav {
 }
 #cover {
   height: auto;
-  img { width: 100% }
+  img { width: 100%; }
   position: relative;
   h1 {
     position: absolute;
@@ -257,7 +177,7 @@ a.to_nav {
     @include grid(3, 0);
     @include center;
     color: white;
-    font-size: 0.75em;
+    font-size: 0.65em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     line-height: 30px;
@@ -280,9 +200,7 @@ a.to_nav {
 	  width: 90%;
     margin: 25px 5%;
   }
-  span {
-    color: $mineShaft;
-  }
+  span { color: $mineShaft; }
 }
 
 #intro {
@@ -292,34 +210,35 @@ a.to_nav {
     padding: 0;
   }
   @include center;
-  li {
-    letter-spacing: 0.1em;
-  }
+  li { letter-spacing: 0.1em; }
 }
 
 #testimonials {
   background-color: $tundora;
   color: $gallery;
-  @include homeSectionDisplay;
-  .scrolling-controls ul {
-    padding: 0;
-  }
+  .scrolling-controls ul { padding: 0; }
   img {
     width: 100px;
     height: 100px;
   }
+  @include homeSectionDisplay;
+  @include scrollingSection;
+  p { color: $gallery; }
 }
 
 #featured-code {
   background-color: $gallery;
   color: $tundora;
-  @include homeSectionDisplay;
   .scrolling-controls ul {
     background-color: $codGray;
     color: #fff;
     padding-left: 0;
   }
+  @include homeSectionDisplay;
+  @include scrollingSection;
   @include featuredCodeStyles;
+  h2 {color: $hippieBlue; }
+  p{ color: $tamarilo; }
 }
 
 /*footer*/
@@ -336,8 +255,10 @@ footer {
     line-height: 50px;
     font-variant: small-caps;
   }
-  span { transform: scale(1.0, 0.5) }
-  #social { font-size: 1.8em }
+  span { transform: scale(1.0, 0.5); }
+  #social { font-size: 1.8em; }
+  #linkedin { margin-left: 20%; }
+  #github { margin-rigth: 20%; }
 }
 
 @import "mediaQueries";
