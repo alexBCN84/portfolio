@@ -72,10 +72,17 @@ jQuery(function($) {
 
 
     smoothHorizontalScroll: function() {
-      $('.smooth-left').on('click', function(event){
+      $('.smooth-testimonials').click(function(event){
         var $link = $(this).attr("href");
-        $('.scrolls').animate({
-          scrollLeft: $('.scrolls').scrollLeft()-15 + $($link).offset().left
+        $('#scroll-testimonials').animate({
+          scrollLeft: $('#scroll-testimonials').scrollLeft()-15 + $($link).offset().left
+        }, 500);
+        event.preventDefault();
+      });
+      $('.smooth-featured-code').click(function(event){
+        var $link = $(this).attr("href");
+        $('#scroll-featured-code').animate({
+          scrollLeft: $('#scroll-featured-code').scrollLeft()-15 + $($link).offset().left
         }, 500);
         event.preventDefault();
       });
