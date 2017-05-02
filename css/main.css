@@ -366,6 +366,13 @@ a.to_nav:hover, a.to_nav:focus {
   color: #eeeeee;
 }
 
+#testimonials .linkedin-testimonials {
+  position: relative;
+  top: -40px;
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 #featured-code {
   background-color: #eeeeee;
   color: #4e4e4e;

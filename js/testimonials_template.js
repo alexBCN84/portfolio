@@ -5,7 +5,8 @@
     `<article id="${testimonials[i].id}">
       <a href="${testimonials[i].previous}" class="smooth-testimonials"><i class="fa fa-angle-double-left arrow-testimonials"></i></a>
       <blockquote>
-        <a href="${testimonials[i].link}"><img src="${testimonials[i].img}" alt="#" /></a>
+        <a href="${testimonials[i].link}"><img src="${testimonials[i].img}" alt="#" /></a><br/>
+        <i id="linkedin" class="fa fa-linkedin-square linkedin-testimonials"></i>
         <h2>${testimonials[i].name}</h2>
         <h3>${testimonials[i].title}</h3></br>
         <p>${testimonials[i].testimonial}</p>

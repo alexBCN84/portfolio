@@ -224,6 +224,13 @@ a.to_nav {
   @include homeSectionDisplay;
   @include scrollingSection;
   p { color: $gallery; }
+  .linkedin-testimonials {
+    position: relative;
+    top: -40px;
+    font-size: 1.5em;
+    color: rgba(255,255,255, 0.5);
+
+  }
 }
 
 #featured-code {
