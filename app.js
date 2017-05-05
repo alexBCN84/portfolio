@@ -5,7 +5,9 @@ import './js/featuredCode_template.js';
 
 // import React from 'react'
 // import ReactDOM from 'react-dom'
-// tutorial1.js
+//
+// //tutorial1.js
+//
 // var CommentBox = React.createClass({
 //   render: function() {
 //     return (

@@ -1,4 +1,5 @@
 
+
 jQuery(function($) {
   'use strict';
 
@@ -75,16 +76,32 @@ jQuery(function($) {
     smoothHorizontalScroll: function() {
       $('.smooth-testimonials').click(function(event){
         var $link = $(this).attr("href");
-        $('#scroll-testimonials').animate({
-          scrollLeft: $('#scroll-testimonials').scrollLeft()-15 + $($link).offset().left
-        }, 500);
+          if ($(window).width() < 601){
+            // It’s a Phone.
+            $('#scroll-testimonials').animate({
+              scrollLeft: $('#scroll-featured-code').scrollLeft()-15 + $($link).offset().left
+            }, 500);
+          } else {
+            // It’s a tablet/ desktop/laptop.
+            $('#scroll-testimonials').animate({
+              scrollLeft: $('#scroll-featured-code').scrollLeft() + $($link).offset().left
+            }, 500);
+          }
         event.preventDefault();
       });
       $('.smooth-featured-code').click(function(event){
         var $link = $(this).attr("href");
-        $('#scroll-featured-code').animate({
-          scrollLeft: $('#scroll-featured-code').scrollLeft()-15 + $($link).offset().left
-        }, 500);
+        if ($(window).width() < 601){
+          // It’s a Phone.
+          $('#scroll-featured-code').animate({
+            scrollLeft: $('#scroll-featured-code').scrollLeft()-15 + $($link).offset().left
+          }, 500);
+        } else {
+          // It’s a tablet/ desktop/laptop.
+          $('#scroll-featured-code').animate({
+            scrollLeft: $('#scroll-featured-code').scrollLeft()-35 + $($link).offset().left
+          }, 500);
+        }
         event.preventDefault();
       });
     },

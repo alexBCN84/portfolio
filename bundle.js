@@ -63,12 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 82);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 183:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -151,16 +150,32 @@ jQuery(function ($) {
     smoothHorizontalScroll: function smoothHorizontalScroll() {
       $('.smooth-testimonials').click(function (event) {
         var $link = $(this).attr("href");
-        $('#scroll-testimonials').animate({
-          scrollLeft: $('#scroll-testimonials').scrollLeft() - 15 + $($link).offset().left
-        }, 500);
+        if ($(window).width() < 601) {
+          // It’s a Phone.
+          $('#scroll-testimonials').animate({
+            scrollLeft: $('#scroll-featured-code').scrollLeft() - 15 + $($link).offset().left
+          }, 500);
+        } else {
+          // It’s a tablet/ desktop/laptop.
+          $('#scroll-testimonials').animate({
+            scrollLeft: $('#scroll-featured-code').scrollLeft() + $($link).offset().left
+          }, 500);
+        }
         event.preventDefault();
       });
       $('.smooth-featured-code').click(function (event) {
         var $link = $(this).attr("href");
-        $('#scroll-featured-code').animate({
-          scrollLeft: $('#scroll-featured-code').scrollLeft() - 15 + $($link).offset().left
-        }, 500);
+        if ($(window).width() < 601) {
+          // It’s a Phone.
+          $('#scroll-featured-code').animate({
+            scrollLeft: $('#scroll-featured-code').scrollLeft() - 15 + $($link).offset().left
+          }, 500);
+        } else {
+          // It’s a tablet/ desktop/laptop.
+          $('#scroll-featured-code').animate({
+            scrollLeft: $('#scroll-featured-code').scrollLeft() - 35 + $($link).offset().left
+          }, 500);
+        }
         event.preventDefault();
       });
     },
@@ -184,8 +199,52 @@ jQuery(function ($) {
 });
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 184:
+"use strict";
+
+
+var featuredCode = [{
+  id: 'code3',
+  title: 'BiBer App',
+  tools: 'I have experience developing web applications with Ruby on Rails.',
+  code: '&lt;li id="sm-login-out"&gt;\n<% if user_signed_in? %>\n&lt;a&gt;Hello\n  <% if current_user.admin? %>\n  Admin\n  <% else %>\n    <% if current_user.first_name.present?%>\n      <%= current_user.first_name %>\n    <% else %>\n      <%= current_user.email %>\n    <% end %>\n  <% end %>\n&lt;/a&gt;\n<% end %>\n&lt;/li&gt;\n&lt;li id="sm-login-out"&gt;\n<% if user_signed_in? %>\n&lt;a&gt;|&lt;/a&gt;\n<% end %>\n&lt;/li&gt;',
+  github: 'https://github.com/alexBCN84/bikeberlin/blob/master/app/views/layouts/application.html.erb',
+  previous: '#code2',
+  next: '#code1',
+  language: 'language-html'
+}, {
+  id: 'code2',
+  title: 'Matching Game',
+  tools: 'I enhance the functionality of my CSS with\n    <i class="ionicons ion-social-sass" style="font-size: 30px;"></i>\n    nesting, mixins, variables and functions.',
+  code: '#gamePannel {\nposition: absolute;\nmargin: 5%;\nwidth: 90%;\nheight: 80%;\nborder-radius: 20px;\nbackground-color: $gamePannelBackground;\n.gameBox {\n  position: absolute;\n  float: left;\n  @include mQ (500px) {\n    height: 48%;\n    width: 96%;\n  }\n  @include mQ (3001px, 501px) {\n    width: 48%;\n  }\n}',
+  github: 'https://github.com/alexBCN84/matchinggame/blob/master/assets/scss/main.scss',
+  previous: '#code1',
+  next: '#code3',
+  language: 'language-css'
+}, {
+  id: 'code1',
+  title: 'notepad app',
+  tools: 'I structure my <i class="ionicons ion-social-javascript"></i> code\n    following the module pattern for optimal readiblity and maintainability.',
+  code: 'var app = {\ninit: function() {\n  app.entries = dataStore.store(\'myData\');\n  view.setUpEventListeners();\n  view.displayEntries();\n},\n\nentries: [],\n\naddEntry: function(entryTitle, entryText) {\n  this.entries.push({\n    entryDate: new Date().toDateString(),\n    entryTitle: entryTitle,\n    entryText: entryText,\n    archived: false\n  });\n},\n',
+
+  github: 'https://github.com/alexBCN84/myNotepad/blob/master/public/client.js',
+  previous: '#code3',
+  next: '#code2',
+  language: 'language-javascript'
+}];
+
+{
+  var i = featuredCode.length;
+  while (i--) {
+    var featuredTemplate = '<article id="' + featuredCode[i].id + '">\n      <a href="' + featuredCode[i].previous + '" class="smooth-featured-code"><i class="fa fa-angle-double-left arrow-code"></i></a>\n      <blockquote>\n\n        <h2>' + featuredCode[i].title + '</h2>\n        <h3>' + featuredCode[i].tools + '</h3></br>\n        <pre><code class="' + featuredCode[i].language + '">' + featuredCode[i].code + '</code></pre>\n        <h2>...</h2>\n        <a href="' + featuredCode[i].github + '">More code on <i class="fa fa-github-square"></i></a>\n      </blockquote>\n      <a href="' + featuredCode[i].next + '" class="smooth-featured-code"><i class="fa fa-angle-double-right arrow-code"></i></a>\n    </article>';
+    document.getElementById('scroll-featured-code').innerHTML += featuredTemplate;
+  };
+}
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -314,11 +373,81 @@ Prism.languages.markup = { comment: /<!--[\w\W]*?-->/, prolog: /<\?[\w\W]+?\?>/,
 Prism.languages.css = { comment: /\/\*[\w\W]*?\*\//, atrule: { pattern: /@[\w-]+?.*?(;|(?=\s*\{))/i, inside: { rule: /@[\w-]+/ } }, url: /url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i, selector: /[^\{\}\s][^\{\};]*?(?=\s*\{)/, string: { pattern: /("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, property: /(\b|\B)[\w-]+(?=\s*:)/i, important: /\B!important\b/i, "function": /[-a-z0-9]+(?=\()/i, punctuation: /[(){};:]/ }, Prism.languages.css.atrule.inside.rest = Prism.util.clone(Prism.languages.css), Prism.languages.markup && (Prism.languages.insertBefore("markup", "tag", { style: { pattern: /(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i, lookbehind: !0, inside: Prism.languages.css, alias: "language-css" } }), Prism.languages.insertBefore("inside", "attr-value", { "style-attr": { pattern: /\s*style=("|').*?\1/i, inside: { "attr-name": { pattern: /^\s*style/i, inside: Prism.languages.markup.tag.inside }, punctuation: /^\s*=\s*['"]|['"]\s*$/, "attr-value": { pattern: /.+/i, inside: Prism.languages.css } }, alias: "language-css" } }, Prism.languages.markup.tag));
 Prism.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\w\W]*?\*\//, lookbehind: !0 }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: !0 }], string: { pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, "class-name": { pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i, lookbehind: !0, inside: { punctuation: /(\.|\\)/ } }, keyword: /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/, "boolean": /\b(true|false)\b/, "function": /[a-z0-9_]+(?=\()/i, number: /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/, punctuation: /[{}[\];(),.:]/ };
 Prism.languages.javascript = Prism.languages.extend("clike", { keyword: /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/, number: /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/, "function": /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*\*?|\/|~|\^|%|\.{3}/ }), Prism.languages.insertBefore("javascript", "keyword", { regex: { pattern: /(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/, lookbehind: !0, greedy: !0 } }), Prism.languages.insertBefore("javascript", "string", { "template-string": { pattern: /`(?:\\\\|\\?[^\\])*?`/, greedy: !0, inside: { interpolation: { pattern: /\$\{[^}]+\}/, inside: { "interpolation-punctuation": { pattern: /^\$\{|\}$/, alias: "punctuation" }, rest: Prism.languages.javascript } }, string: /[\s\S]+/ } } }), Prism.languages.markup && Prism.languages.insertBefore("markup", "tag", { script: { pattern: /(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i, lookbehind: !0, inside: Prism.languages.javascript, alias: "language-javascript" } }), Prism.languages.js = Prism.languages.javascript;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(185)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 185:
+"use strict";
+
+
+var testimonials = [
+// {
+//   id: 'ref4',
+//   img: 'img/Kave_bulambo.jpg',
+//   link: 'https://www.linkedin.com/in/kave-bulambo-a090bb32/',
+//   name: 'Kave Bulambo',
+//   title: 'Communications & Brand Consulting <br/>at Zalando SE',
+//   testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
+//   previous: '#ref3',
+//   next: '#ref1'
+// },
+// {
+//   id: 'ref3',
+//   img: 'img/Omar_mekky.jpg',
+//   link: 'https://www.linkedin.com/in/omarmekky/',
+//   name: 'Omar Mekky',
+//   title: 'Communications & Brand Consulting <br/>at Zalando SE',
+//   testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
+//   previous: '#ref2',
+//   next: '#ref4'
+// },
+{
+  id: 'ref2',
+  img: 'img/Uleshka_asher.jpg',
+  link: 'https://www.linkedin.com/in/uleshka-asher-9096384/',
+  name: 'Uleshka Asher',
+  title: 'Communications & Brand Consulting <br/>at Zalando SE',
+  testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
+  previous: '#ref1',
+  next: '#ref1'
+}, {
+  id: 'ref1',
+  img: 'img/Anna_kochegura.jpg',
+  link: 'https://www.linkedin.com/in/akochegura/',
+  name: 'Anna Kochegura',
+  title: 'Account Manager <br/>Zalando Media Solutions<br/>at Zalando SE',
+  testimonial: 'Alex is a responsible colleague who has a thorough approach to tasks and is willing to go an extra mile in order to achieve the goal',
+  previous: '#ref2',
+  next: '#ref2'
+}];
+
+{
+  var i = testimonials.length;
+  while (i--) {
+    var testimonialTemplate = '<article id="' + testimonials[i].id + '">\n      <a href="' + testimonials[i].previous + '" class="smooth-testimonials"><i class="fa fa-angle-double-left arrow-testimonials"></i></a>\n      <blockquote>\n        <a href="' + testimonials[i].link + '"><img src="' + testimonials[i].img + '" alt="#" /></a><br/>\n        <i id="linkedin" class="fa fa-linkedin-square linkedin-testimonials"></i>\n        <h2>' + testimonials[i].name + '</h2>\n        <h3>' + testimonials[i].title + '</h3></br>\n        <p>' + testimonials[i].testimonial + '</p>\n      </blockquote>\n      <a href="' + testimonials[i].next + '" class="smooth-testimonials"><i class="fa fa-angle-double-right arrow-testimonials"></i></a>\n    </article>';
+    document.getElementById('scroll-testimonials').innerHTML += testimonialTemplate;
+  };
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(0);
+
+__webpack_require__(2);
+
+__webpack_require__(3);
+
+__webpack_require__(1);
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports) {
 
 var g;
@@ -344,122 +473,5 @@ try {
 module.exports = g;
 
 
-/***/ }),
-
-/***/ 187:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var featuredCode = [{
-  id: 'code3',
-  title: 'BiBer App',
-  tools: 'I have experience developing web applications with Ruby on Rails.',
-  code: '&lt;li id="sm-login-out"&gt;\n<% if user_signed_in? %>\n&lt;a&gt;Hello\n  <% if current_user.admin? %>\n  Admin\n  <% else %>\n    <% if current_user.first_name.present?%>\n      <%= current_user.first_name %>\n    <% else %>\n      <%= current_user.email %>\n    <% end %>\n  <% end %>\n&lt;/a&gt;\n<% end %>\n&lt;/li&gt;\n&lt;li id="sm-login-out"&gt;\n<% if user_signed_in? %>\n&lt;a&gt;|&lt;/a&gt;\n<% end %>\n&lt;/li&gt;',
-  github: 'https://github.com/alexBCN84/bikeberlin/blob/master/app/views/layouts/application.html.erb',
-  previous: '#code2',
-  next: '#code1',
-  language: 'language-html'
-}, {
-  id: 'code2',
-  title: 'Matching Game',
-  tools: 'I enhance the functionality of my CSS with\n    <i class="ionicons ion-social-sass" style="font-size: 30px;"></i>\n    nesting, mixins, variables and functions.',
-  code: '#gamePannel {\nposition: absolute;\nmargin: 5%;\nwidth: 90%;\nheight: 80%;\nborder-radius: 20px;\nbackground-color: $gamePannelBackground;\n.gameBox {\n  position: absolute;\n  float: left;\n  @include mQ (500px) {\n    height: 48%;\n    width: 96%;\n  }\n  @include mQ (3001px, 501px) {\n    width: 48%;\n  }\n}',
-  github: 'https://github.com/alexBCN84/matchinggame/blob/master/assets/scss/main.scss',
-  previous: '#code1',
-  next: '#code3',
-  language: 'language-css'
-}, {
-  id: 'code1',
-  title: 'notepad app',
-  tools: 'I structure my <i class="ionicons ion-social-javascript"></i> code\n    following the module pattern for optimal readiblity and maintainability.',
-  code: 'var app = {\ninit: function() {\n  app.entries = dataStore.store(\'myData\');\n  view.setUpEventListeners();\n  view.displayEntries();\n},\n\nentries: [],\n\naddEntry: function(entryTitle, entryText) {\n  this.entries.push({\n    entryDate: new Date().toDateString(),\n    entryTitle: entryTitle,\n    entryText: entryText,\n    archived: false\n  });\n},\n',
-
-  github: 'https://github.com/alexBCN84/myNotepad/blob/master/public/client.js',
-  previous: '#code3',
-  next: '#code2',
-  language: 'language-javascript'
-}];
-
-{
-  var i = featuredCode.length;
-  while (i--) {
-    var featuredTemplate = '<article id="' + featuredCode[i].id + '">\n      <a href="' + featuredCode[i].previous + '" class="smooth-featured-code"><i class="fa fa-angle-double-left arrow-code"></i></a>\n      <blockquote>\n\n        <h2>' + featuredCode[i].title + '</h2>\n        <h3>' + featuredCode[i].tools + '</h3></br>\n        <pre><code class="' + featuredCode[i].language + '">' + featuredCode[i].code + '</code></pre>\n        <h2>...</h2>\n        <a href="' + featuredCode[i].github + '">More code on <i class="fa fa-github-square"></i></a>\n      </blockquote>\n      <a href="' + featuredCode[i].next + '" class="smooth-featured-code"><i class="fa fa-angle-double-right arrow-code"></i></a>\n    </article>';
-    document.getElementById('scroll-featured-code').innerHTML += featuredTemplate;
-  };
-}
-
-/***/ }),
-
-/***/ 189:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var testimonials = [{
-  id: 'ref4',
-  img: 'img/Kave_bulambo.jpg',
-  link: 'https://www.linkedin.com/in/kave-bulambo-a090bb32/',
-  name: 'Kave Bulambo',
-  title: 'Communications & Brand Consulting <br/>at Zalando SE',
-  testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
-  previous: '#ref3',
-  next: '#ref1'
-}, {
-  id: 'ref3',
-  img: 'img/Omar_mekky.jpg',
-  link: 'https://www.linkedin.com/in/omarmekky/',
-  name: 'Omar Mekky',
-  title: 'Communications & Brand Consulting <br/>at Zalando SE',
-  testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
-  previous: '#ref2',
-  next: '#ref4'
-}, {
-  id: 'ref2',
-  img: 'img/Uleshka_asher.jpg',
-  link: 'https://www.linkedin.com/in/uleshka-asher-9096384/',
-  name: 'Uleshka Asher',
-  title: 'Communications & Brand Consulting <br/>at Zalando SE',
-  testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
-  previous: '#ref1',
-  next: '#ref3'
-}, {
-  id: 'ref1',
-  img: 'img/Anna_kochegura.jpg',
-  link: 'https://www.linkedin.com/in/akochegura/',
-  name: 'Anna Kochegura',
-  title: 'Account Manager <br/>Zalando Media Solutions<br/>at Zalando SE',
-  testimonial: 'Alex is a responsible colleague who has a thorough approach to tasks and is willing to go an extra mile in order to achieve the goal',
-  previous: '#ref4',
-  next: '#ref2'
-}];
-
-{
-  var i = testimonials.length;
-  while (i--) {
-    var testimonialTemplate = '<article id="' + testimonials[i].id + '">\n      <a href="' + testimonials[i].previous + '" class="smooth-testimonials"><i class="fa fa-angle-double-left arrow-testimonials"></i></a>\n      <blockquote>\n        <a href="' + testimonials[i].link + '"><img src="' + testimonials[i].img + '" alt="#" /></a><br/>\n        <i id="linkedin" class="fa fa-linkedin-square linkedin-testimonials"></i>\n        <h2>' + testimonials[i].name + '</h2>\n        <h3>' + testimonials[i].title + '</h3></br>\n        <p>' + testimonials[i].testimonial + '</p>\n      </blockquote>\n      <a href="' + testimonials[i].next + '" class="smooth-testimonials"><i class="fa fa-angle-double-right arrow-testimonials"></i></a>\n    </article>';
-    document.getElementById('scroll-testimonials').innerHTML += testimonialTemplate;
-  };
-}
-
-/***/ }),
-
-/***/ 82:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(183);
-
-__webpack_require__(184);
-
-__webpack_require__(189);
-
-__webpack_require__(187);
-
 /***/ })
-
-/******/ });
+/******/ ]);
