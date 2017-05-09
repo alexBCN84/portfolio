@@ -1,5 +1,9 @@
+
 import './js/effects.js';
-import './js/prism';
+import './js/aside_template.js';
+import './js/prism.js';
+import './js/about_template.js';
+import './js/skills_template.js';
 import './js/testimonials_template.js';
 import './js/featuredCode_template.js';
 

@@ -5,9 +5,19 @@ jQuery(function($) {
 
   var effects = {
     innit: function() {
+      this.animatePreloader();
       this.typewriter();
       this.smoothVerticalScroll();
       this.smoothHorizontalScroll();
+    },
+    animatePreloader() {
+      //$(window).on('load', showPage());
+      var loadingTime = setTimeout(showPage,1000);
+      function showPage() {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('home').style.display = 'block';
+        document.body.style.backgroundColor = "#fff";
+      }
     },
     typewriter: function() {
       var TxtType = function(el, toRotate, period) {
@@ -79,12 +89,12 @@ jQuery(function($) {
           if ($(window).width() < 601){
             // It’s a Phone.
             $('#scroll-testimonials').animate({
-              scrollLeft: $('#scroll-featured-code').scrollLeft()-15 + $($link).offset().left
+              scrollLeft: $('#scroll-testimonials').scrollLeft()-15 + $($link).offset().left
             }, 500);
           } else {
             // It’s a tablet/ desktop/laptop.
             $('#scroll-testimonials').animate({
-              scrollLeft: $('#scroll-featured-code').scrollLeft() + $($link).offset().left
+              scrollLeft: $('#scroll-testimonials').scrollLeft() + $($link).offset().left
             }, 500);
           }
         event.preventDefault();

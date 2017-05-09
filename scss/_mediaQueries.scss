@@ -9,10 +9,14 @@
 
 @media only screen and (min-width: 768px) {
   // Small laptop styles (wider than 768px pixels)
+
   a.to_nav { display: none; }
 
   #primary_nav {
-    ul { background: none; }
+    display: block;
+    ul {
+       background: none;
+     }
     position: absolute;
     top: 5px;
     right: 10px;
@@ -29,9 +33,19 @@
       -moz-border-radius: 2px;
       border-radius: 2px;
       border-bottom: none;
-      color: $tundora;
+      color: $darkBlue;
     }
     .top { display: none; }
+  }
+
+  #mobile-cover { display: none; }
+
+  #cover-sidebar {
+    top: 68px;
+    position: fixed;
+    display: inline-block;
+    width: 30%;
+    height: 30vw;
   }
 }
 

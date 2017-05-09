@@ -1,7 +1,7 @@
 var featuredCode = [
   {
   id: 'code3',
-  title: 'BiBer App',
+  title: 'bibber app',
   tools: 'I have experience developing web applications with Ruby on Rails.',
   code:
 `&lt;li id="sm-login-out"&gt;
@@ -31,7 +31,7 @@ var featuredCode = [
   },
   {
     id: 'code2',
-    title: 'Matching Game',
+    title: 'matching game',
     tools: `I enhance the functionality of my CSS with
     <i class="ionicons ion-social-sass" style="font-size: 30px;"></i>
     nesting, mixins, variables and functions.`,

@@ -8,8 +8,7 @@
     <meta name="author" content="Alejandro Gines">
 
     <title>Alex Gines</title>
-    <!-- Load Babel -->
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">
 
@@ -24,37 +23,73 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
   </head>
 
-  <body id="home">
-    <div class="wrapper">
+  <body>
+    <div id="loader"></div>
+    <div id="home" class="wrapper animate-bottom">
       <header>
         <h1 id="logo"><a href="index.html"><i></i><span>Alex Ginés<br/>Web Developer</span></a></h1>
         <a class="to_nav smooth" href="#primary_nav">menu <i class="fa fa-angle-down"></i></a>
       </header>
-      <section id="cover">
-        <img src="img/avatar-skills.svg" alt="profile">
-        <h1>I am a Front End &<br/>Ruby on Rails Developer</h1>
-        <div id="cover-footer">
-        </div>
-        <div id="submenu">
-          <a href="#testimonials" class="smooth">testimonials <i class="fa fa-quote-right"></i></a>
-          <a href="#featured-code" class="smooth">featured code <i class="fa fa-code"></i></a>
-          <a href="mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com." rolle="button">contact me <i class="fa fa-envelope-o"></i></a>
-        </div>
-      </section>
-      <section id="typewriter1">
-        <h1>
-          <a href="" class="typewrite" data-period="3000" data-type='[ "I focus on clean, readable code.", "I am determined to excel.", "I thrive on daily challenge.", "I’m always willing to go the extra mile." ]'>
-            <span class="wrap"></span>
-          </a>
-        </h1>
-      </section>
-      <section id="intro">
-        <ul>
-          <li>Put simply, coding is my passion. And I’m proud of making my passion into a living.</li>
-        </ul>
+      <main>
+        <section id="mobile-cover" class="cover">
+          <img src="img/cover-img.svg" alt="profile">
+          <h1>I am a Front End &<br/>Ruby on Rails Developer</h1>
+          <div id="submenu">
+            <a href="#testimonials" class="smooth">testimonials <i class="fa fa-quote-right"></i></a>
+            <a href="#featured-code" class="smooth">featured code <i class="fa fa-code"></i></a>
+            <a href="mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com." rolle="button">contact me <i class="fa fa-envelope-o"></i></a>
+          </div>
+        </section>
+        <section id="typewriter1">
+          <h1>
+            <a href="" class="typewrite" data-period="3000" data-type='[ "I focus on clean, readable code.", "I am determined to excel.", "I thrive on daily challenge.", "I’m always willing to go the extra mile." ]'>
+              <span class="wrap"></span>
+            </a>
+          </h1>
+        </section>
+        <section id="intro">
+          <ul>
+            <li>Put simply, coding is my passion. And I’m proud of making my passion into a living.</li>
+          </ul>
 
+        </section>
+      </main>
+      <section id="about">
+        <ul class="section-heading">
+          <li>
+            <h1>About</h1>
+          </li>
+          <li>
+            <span>
+              <a href="#home" class="smooth"><i class="fa fa-angle-up"></i></a>
+              <a href="#skills" class="smooth"><i class="fa fa-angle-down"></i></a>
+            </span>
+          </li>
+        </ul>
+        <div id="about-texts">
+          <br/>
+        <!-- here goes about text -->
+        </div>
+      </section>
+      <section id="skills">
+        <ul class="section-heading">
+          <li>
+            <h1>Skills</h1>
+          </li>
+          <li>
+            <span>
+              <a href="#about" class="smooth"><i class="fa fa-angle-up"></i></a>
+              <a href="#testimonials" class="smooth"><i class="fa fa-angle-down"></i></a>
+            </span>
+          </li>
+        </ul>
+        <div id="skills-texts">
+          <br/>
+        <!-- here goes skills text -->
+        </div>
       </section>
       <section id="testimonials">
         <ul class="section-heading">
@@ -63,14 +98,14 @@
           </li>
           <li>
             <span>
-              <a href="#home" class="smooth"><i class="fa fa-angle-up"></i></a>
+              <a href="#skills" class="smooth"><i class="fa fa-angle-up"></i></a>
               <a href="#featured-code" class="smooth"><i class="fa fa-angle-down"></i></a>
             </span>
           </li>
         </ul>
         <div class="scroll-wrapper">
           <div id="scroll-testimonials" class="scrolls">
-             <!-- here goes testimonialTemplate -->
+            <!-- here goes scroll-testimonials Template -->
           </div>
         </div>
       </section>
@@ -93,32 +128,31 @@
         </div>
       </section>
       <footer>
-        <a href="http://agmwebs.com/AlejandroGinesMartinezCV.pdf" id="resume" type=""><p>view resume</p></a>
+        <a href="https://github.com/alexBCN84/portfolio" id="repo" type=""><p>See this repo</p></a>
         <p><span>&copy;2017</span> alex gines</p>
         <p id="social">
           <a href="https://www.linkedin.com/in/alejandrogines/"><i id="linkedin" class="fa fa-linkedin-square"></i></a>
           <a href="https://github.com/alexBCN84"><i id="github" class="fa fa-github-square"></i></a>
         </p>
       </footer>
-
       <!-- navigation comes here -->
       <nav id="primary_nav">
         <ul>
           <li class="top"><a href="#home" class="smooth"><i class="fa fa-arrow-circle-o-up"></i></a></li>
           <li><a href="#submenu" class="smooth">About</a></li>
-          <li><a href="#featured-code" class="smooth">Projects</a></li>
+          <li><a href="#featured-code" class="smooth">Code</a></li>
           <li><a href="http://tutorialzine.com/2014/09/50-awesome-tools-and-resources-for-web-developers/" target="blank">Resources</a></li>
+          <li><a href="http://alexgines.com/AlejandroGinesMartinezCV.pdf" id="resume" type="application/pdf">Resume</a></li>
           <li><a href="mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com." rolle="button">Contact</a></li>
         </ul>
       </nav><!-- end primary-nav-->
+      <aside id="cover-sidebar" class="cover">
+      <!-- here goes aside_template -->
+      </aside>
     </div><!--end wrapper-->
-
-    <!--<aside id="social">
-      aside position absolute: we want aside to hide and show
-    </aside> -->
 
     <!-- script tags with JavaScript files here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="./bundle.js"></script>
-
+  </body>
 </html>

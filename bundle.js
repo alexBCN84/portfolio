@@ -63,11 +63,44 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var about = [{
+  p: 'At present, I work at Zalando’s Advertising Engineering Department.'
+}, {
+  p: 'I’m originally from Barcelona, but I lived and worked in London for a while before landing here.'
+}, {
+  p: 'Hi, I am a Frontend and Ruby on Rails Developer based in Berlin.'
+}];
+
+{
+  var i = about.length;
+  while (i--) {
+    var aboutTemplate = '<p>' + about[i].p + '</p>';
+    document.getElementById('about-texts').innerHTML += aboutTemplate;
+  };
+}
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var asideTemplate = '<img src="img/cover-img.svg" alt="profile">\n  <h1>I am a Front End &<br/>Ruby on Rails Developer</h1>\n  <div id="submenu">\n    <a href="#testimonials" class="smooth">testimonials <i class="fa fa-quote-right"></i></a>\n    <a href="#featured-code" class="smooth">featured code <i class="fa fa-code"></i></a>\n    <a href="mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com." rolle="button">contact me <i class="fa fa-envelope-o"></i></a>\n  </div>';
+document.getElementById('cover-sidebar').innerHTML += asideTemplate;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78,10 +111,21 @@ jQuery(function ($) {
 
   var effects = {
     innit: function innit() {
+      this.animatePreloader();
       this.typewriter();
       this.smoothVerticalScroll();
       this.smoothHorizontalScroll();
     },
+    animatePreloader: function animatePreloader() {
+      //$(window).on('load', showPage());
+      var loadingTime = setTimeout(showPage, 1000);
+      function showPage() {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('home').style.display = 'block';
+        document.body.style.backgroundColor = "#fff";
+      }
+    },
+
     typewriter: function typewriter() {
       var TxtType = function TxtType(el, toRotate, period) {
         this.toRotate = toRotate;
@@ -153,12 +197,12 @@ jQuery(function ($) {
         if ($(window).width() < 601) {
           // It’s a Phone.
           $('#scroll-testimonials').animate({
-            scrollLeft: $('#scroll-featured-code').scrollLeft() - 15 + $($link).offset().left
+            scrollLeft: $('#scroll-testimonials').scrollLeft() - 15 + $($link).offset().left
           }, 500);
         } else {
           // It’s a tablet/ desktop/laptop.
           $('#scroll-testimonials').animate({
-            scrollLeft: $('#scroll-featured-code').scrollLeft() + $($link).offset().left
+            scrollLeft: $('#scroll-testimonials').scrollLeft() + $($link).offset().left
           }, 500);
         }
         event.preventDefault();
@@ -199,7 +243,7 @@ jQuery(function ($) {
 });
 
 /***/ }),
-/* 1 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -207,7 +251,7 @@ jQuery(function ($) {
 
 var featuredCode = [{
   id: 'code3',
-  title: 'BiBer App',
+  title: 'bibber app',
   tools: 'I have experience developing web applications with Ruby on Rails.',
   code: '&lt;li id="sm-login-out"&gt;\n<% if user_signed_in? %>\n&lt;a&gt;Hello\n  <% if current_user.admin? %>\n  Admin\n  <% else %>\n    <% if current_user.first_name.present?%>\n      <%= current_user.first_name %>\n    <% else %>\n      <%= current_user.email %>\n    <% end %>\n  <% end %>\n&lt;/a&gt;\n<% end %>\n&lt;/li&gt;\n&lt;li id="sm-login-out"&gt;\n<% if user_signed_in? %>\n&lt;a&gt;|&lt;/a&gt;\n<% end %>\n&lt;/li&gt;',
   github: 'https://github.com/alexBCN84/bikeberlin/blob/master/app/views/layouts/application.html.erb',
@@ -216,7 +260,7 @@ var featuredCode = [{
   language: 'language-html'
 }, {
   id: 'code2',
-  title: 'Matching Game',
+  title: 'matching game',
   tools: 'I enhance the functionality of my CSS with\n    <i class="ionicons ion-social-sass" style="font-size: 30px;"></i>\n    nesting, mixins, variables and functions.',
   code: '#gamePannel {\nposition: absolute;\nmargin: 5%;\nwidth: 90%;\nheight: 80%;\nborder-radius: 20px;\nbackground-color: $gamePannelBackground;\n.gameBox {\n  position: absolute;\n  float: left;\n  @include mQ (500px) {\n    height: 48%;\n    width: 96%;\n  }\n  @include mQ (3001px, 501px) {\n    width: 48%;\n  }\n}',
   github: 'https://github.com/alexBCN84/matchinggame/blob/master/assets/scss/main.scss',
@@ -244,7 +288,7 @@ var featuredCode = [{
 }
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -373,26 +417,60 @@ Prism.languages.markup = { comment: /<!--[\w\W]*?-->/, prolog: /<\?[\w\W]+?\?>/,
 Prism.languages.css = { comment: /\/\*[\w\W]*?\*\//, atrule: { pattern: /@[\w-]+?.*?(;|(?=\s*\{))/i, inside: { rule: /@[\w-]+/ } }, url: /url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i, selector: /[^\{\}\s][^\{\};]*?(?=\s*\{)/, string: { pattern: /("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, property: /(\b|\B)[\w-]+(?=\s*:)/i, important: /\B!important\b/i, "function": /[-a-z0-9]+(?=\()/i, punctuation: /[(){};:]/ }, Prism.languages.css.atrule.inside.rest = Prism.util.clone(Prism.languages.css), Prism.languages.markup && (Prism.languages.insertBefore("markup", "tag", { style: { pattern: /(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i, lookbehind: !0, inside: Prism.languages.css, alias: "language-css" } }), Prism.languages.insertBefore("inside", "attr-value", { "style-attr": { pattern: /\s*style=("|').*?\1/i, inside: { "attr-name": { pattern: /^\s*style/i, inside: Prism.languages.markup.tag.inside }, punctuation: /^\s*=\s*['"]|['"]\s*$/, "attr-value": { pattern: /.+/i, inside: Prism.languages.css } }, alias: "language-css" } }, Prism.languages.markup.tag));
 Prism.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\w\W]*?\*\//, lookbehind: !0 }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: !0 }], string: { pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, "class-name": { pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i, lookbehind: !0, inside: { punctuation: /(\.|\\)/ } }, keyword: /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/, "boolean": /\b(true|false)\b/, "function": /[a-z0-9_]+(?=\()/i, number: /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/, punctuation: /[{}[\];(),.:]/ };
 Prism.languages.javascript = Prism.languages.extend("clike", { keyword: /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/, number: /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/, "function": /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*\*?|\/|~|\^|%|\.{3}/ }), Prism.languages.insertBefore("javascript", "keyword", { regex: { pattern: /(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/, lookbehind: !0, greedy: !0 } }), Prism.languages.insertBefore("javascript", "string", { "template-string": { pattern: /`(?:\\\\|\\?[^\\])*?`/, greedy: !0, inside: { interpolation: { pattern: /\$\{[^}]+\}/, inside: { "interpolation-punctuation": { pattern: /^\$\{|\}$/, alias: "punctuation" }, rest: Prism.languages.javascript } }, string: /[\s\S]+/ } } }), Prism.languages.markup && Prism.languages.insertBefore("markup", "tag", { script: { pattern: /(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i, lookbehind: !0, inside: Prism.languages.javascript, alias: "language-javascript" } }), Prism.languages.js = Prism.languages.javascript;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var testimonials = [
-// {
-//   id: 'ref4',
-//   img: 'img/Kave_bulambo.jpg',
-//   link: 'https://www.linkedin.com/in/kave-bulambo-a090bb32/',
-//   name: 'Kave Bulambo',
-//   title: 'Communications & Brand Consulting <br/>at Zalando SE',
-//   testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
-//   previous: '#ref3',
-//   next: '#ref1'
-// },
+var skills = [{
+  heading: 'Management Tools',
+  p: 'Git & Github, Agile Scrum, Agile Kanban.'
+}, {
+  heading: 'Build Tools',
+  p: 'NPM, Webpack.'
+}, {
+  heading: 'Compiling Tools',
+  p: 'Prepos, Babel.'
+}, {
+  heading: 'Architectural Concepts & Frontend Frameworks',
+  p: 'WebSockets, Responsive Design, Bootstrap, HTML5 APIs.'
+}, {
+  heading: 'Javascript Libreries & Frameworks',
+  p: 'jQuery,Modernizr ,Handlebars, React JS, Angular JS, '
+}, {
+  heading: 'Programming & Markup',
+  p: 'HTML, CSS & CSS3, SASS, vanilla JavaScript and ES6, JSON, Jsx, mySQL, PostgreSQL, Ruby, Slim'
+}];
+
+{
+  var i = skills.length;
+  while (i--) {
+    var skillsTemplate = '<h3>' + skills[i].heading + '</h3>\n     <p>' + skills[i].p + '</p>';
+    document.getElementById('skills-texts').innerHTML += skillsTemplate;
+  };
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var testimonials = [{
+  id: 'ref3',
+  img: 'img/Kave_bulambo.jpg',
+  link: 'https://www.linkedin.com/in/kave-bulambo-a090bb32/',
+  name: 'Kave Bulambo',
+  title: 'Communications & Brand Consulting <br/>at Zalando SE',
+  testimonial: 'Alex is an inspirational young professional who has successfully transitioned his career from teaching to software engineering. Working with him  was absolutely delightful and showed me his courage and tenacity  for challenges bigger than himself.',
+  previous: '#ref2',
+  next: '#ref1'
+},
 // {
 //   id: 'ref3',
 //   img: 'img/Omar_mekky.jpg',
@@ -411,15 +489,15 @@ var testimonials = [
   title: 'Communications & Brand Consulting <br/>at Zalando SE',
   testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
   previous: '#ref1',
-  next: '#ref1'
+  next: '#ref3'
 }, {
   id: 'ref1',
   img: 'img/Anna_kochegura.jpg',
   link: 'https://www.linkedin.com/in/akochegura/',
   name: 'Anna Kochegura',
   title: 'Account Manager <br/>Zalando Media Solutions<br/>at Zalando SE',
-  testimonial: 'Alex is a responsible colleague who has a thorough approach to tasks and is willing to go an extra mile in order to achieve the goal',
-  previous: '#ref2',
+  testimonial: 'Alex is a responsible colleague who has a thorough approach to tasks and is willing to go an extra mile in order to achieve the goal.',
+  previous: '#ref3',
   next: '#ref2'
 }];
 
@@ -432,22 +510,28 @@ var testimonials = [
 }
 
 /***/ }),
-/* 4 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(0);
-
 __webpack_require__(2);
-
-__webpack_require__(3);
 
 __webpack_require__(1);
 
+__webpack_require__(4);
+
+__webpack_require__(0);
+
+__webpack_require__(5);
+
+__webpack_require__(6);
+
+__webpack_require__(3);
+
 /***/ }),
-/* 5 */
+/* 8 */
 /***/ (function(module, exports) {
 
 var g;
