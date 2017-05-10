@@ -76,7 +76,7 @@
 var about = [{
   p: 'At present, I work at Zalando’s Advertising Engineering Department.'
 }, {
-  p: 'I’m originally from Barcelona, but I lived and worked in London for a while before landing here.'
+  p: 'I’m originary from Barcelona, but I lived and worked in London for a while before landing here.'
 }, {
   p: 'Hi, I am a Frontend and Ruby on Rails Developer based in Berlin.'
 }];
@@ -84,7 +84,7 @@ var about = [{
 {
   var i = about.length;
   while (i--) {
-    var aboutTemplate = '<p>' + about[i].p + '</p>';
+    var aboutTemplate = '<ul>\n      <li><p>' + about[i].p + '</p></li>\n     <ul>';
     document.getElementById('about-texts').innerHTML += aboutTemplate;
   };
 }
@@ -101,21 +101,10 @@ jQuery(function ($) {
 
   var effects = {
     innit: function innit() {
-      this.animatePreloader();
       this.typewriter();
       this.smoothVerticalScroll();
       this.smoothHorizontalScroll();
     },
-    animatePreloader: function animatePreloader() {
-      //$(window).on('load', showPage());
-      var loadingTime = setTimeout(showPage, 1000);
-      function showPage() {
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('home').style.display = 'block';
-        document.body.style.backgroundColor = "#fff";
-      }
-    },
-
     typewriter: function typewriter() {
       var TxtType = function TxtType(el, toRotate, period) {
         this.toRotate = toRotate;
@@ -427,7 +416,7 @@ var skills = [{
   p: 'Prepos, Babel.'
 }, {
   heading: 'Architectural Concepts & Frontend Frameworks',
-  p: 'WebSockets, Responsive Design, Bootstrap, Web APIs.'
+  p: 'WebSockets, Responsive Design, Bootstrap, HTML5 APIs.'
 }, {
   heading: 'Javascript Libreries & Frameworks',
   p: 'jQuery,Modernizr ,Handlebars, React JS, Angular JS, '
@@ -451,16 +440,17 @@ var skills = [{
 "use strict";
 
 
-var testimonials = [{
-  id: 'ref3',
-  img: 'img/Kave_bulambo.jpg',
-  link: 'https://www.linkedin.com/in/kave-bulambo-a090bb32/',
-  name: 'Kave Bulambo',
-  title: 'Communications & Brand Consulting <br/>at Zalando SE',
-  testimonial: 'Alex is an inspirational young professional who has successfully transitioned his career from teaching to software engineering. Working with him  was absolutely delightful and showed me his courage and tenacity  for challenges bigger than himself.',
-  previous: '#ref2',
-  next: '#ref1'
-},
+var testimonials = [
+// {
+//   id: 'ref4',
+//   img: 'img/Kave_bulambo.jpg',
+//   link: 'https://www.linkedin.com/in/kave-bulambo-a090bb32/',
+//   name: 'Kave Bulambo',
+//   title: 'Communications & Brand Consulting <br/>at Zalando SE',
+//   testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
+//   previous: '#ref3',
+//   next: '#ref1'
+// },
 // {
 //   id: 'ref3',
 //   img: 'img/Omar_mekky.jpg',
@@ -479,7 +469,7 @@ var testimonials = [{
   title: 'Communications & Brand Consulting <br/>at Zalando SE',
   testimonial: 'Alejandro, despites having many tasks on his table, is always really "on the job" and finishes everything in a super timely manner. He is also highly responsive and responsible.',
   previous: '#ref1',
-  next: '#ref3'
+  next: '#ref1'
 }, {
   id: 'ref1',
   img: 'img/Anna_kochegura.jpg',
@@ -487,7 +477,7 @@ var testimonials = [{
   name: 'Anna Kochegura',
   title: 'Account Manager <br/>Zalando Media Solutions<br/>at Zalando SE',
   testimonial: 'Alex is a responsible colleague who has a thorough approach to tasks and is willing to go an extra mile in order to achieve the goal.',
-  previous: '#ref3',
+  previous: '#ref2',
   next: '#ref2'
 }];
 
@@ -510,7 +500,7 @@ __webpack_require__(1);
 
 __webpack_require__(3);
 
-__webpack_require__(10);
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./js/submenu_template.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 __webpack_require__(0);
 
@@ -546,45 +536,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-/* 8 */,
-/* 9 */,
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var submenu = {
-  O1: 'testimonials',
-  O2: 'featured code',
-  O3: 'contact me',
-  email: 'mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com'
-};
-
-{
-  var submenuTemplate = '<a href="#testimonials" class="smooth">' + submenu.O1 + '<i class="fa fa-quote-right"></i></a>\n  <a href="#featured-code" class="smooth">' + submenu.O2 + '<i class="fa fa-code"></i></a>\n  <a href="' + submenu.email + '" rolle="button">' + submenu.O3 + ' <i class="fa fa-envelope-o"></i></a>';
-
-  var responsiveSubmenu = {
-    deleteContent: function deleteContent() {
-      document.getElementById('submenu-mobile').innerHTML = '';
-      document.getElementById('submenu-desktop').innerHTML = '';
-    },
-    onLoad: function onLoad() {
-      var width = $(window).width();
-      width < 768 ? document.getElementById('submenu-mobile').innerHTML += submenuTemplate : document.getElementById('submenu-desktop').innerHTML += submenuTemplate;
-    },
-    onResize: function onResize() {
-      var widthResize = $(window).resize(function () {
-        var width = $(window).width();
-        width < 768 ? (responsiveSubmenu.deleteContent(), document.getElementById('submenu-mobile').innerHTML += submenuTemplate) : (responsiveSubmenu.deleteContent(), document.getElementById('submenu-desktop').innerHTML += submenuTemplate);
-      });
-    }
-  };
-  responsiveSubmenu.onLoad();
-  responsiveSubmenu.onResize();
-}
 
 /***/ })
 /******/ ]);

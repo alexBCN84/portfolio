@@ -13,7 +13,7 @@ var skills = [
   },
   {
     heading: 'Architectural Concepts & Frontend Frameworks',
-    p: 'WebSockets, Responsive Design, Bootstrap, HTML5 APIs.'
+    p: 'WebSockets, Responsive Design, Bootstrap, Web APIs.'
   },
   {
     heading: 'Javascript Libreries & Frameworks',

@@ -4,12 +4,22 @@
 
 @media only screen and (min-width: 600px) {
   //Tablet styles (wider than 600 pixels)
+  #cover-img h1 { font-size: 1.6em; }
+
 }
 
 
 @media only screen and (min-width: 768px) {
   // Small laptop styles (wider than 768px pixels)
-
+#logo {
+  i { height: 4em; }
+  span {
+    margin-left: 3%;
+    color: $hippieBlue;
+    line-height: 1.5em;
+    font-size: 1.2em;
+  }
+}
   a.to_nav { display: none; }
 
   #primary_nav {
@@ -18,7 +28,7 @@
        background: none;
      }
     position: absolute;
-    top: 5px;
+    top: 20px;
     right: 10px;
     display: inherit;
     margin: inherit;
@@ -28,24 +38,55 @@
     a {
       float: left;
       border: none;
-      padding: 0 10px;
+      padding: 0 20px;
+      letter-spacing: 1.5px;
       -webkit-border-radius: 2px;
       -moz-border-radius: 2px;
       border-radius: 2px;
       border-bottom: none;
-      color: $darkBlue;
+      color: $hippieBlue;
+      transition: 0.5s ease;
+      &:hover, &:focus {
+        border-top: 1px solid $hippieBlue;
+        background-color: #fff;
+        color: $hippieBlue;
+      }
     }
     .top { display: none; }
   }
 
-  #mobile-cover { display: none; }
+  main {
+    height: 460px;
+    border-top: 1px solid $smoothYellow;
+    background-color: $smoothYellow;
+  }
 
-  #cover-sidebar {
-    top: 68px;
-    position: fixed;
-    display: inline-block;
-    width: 30%;
-    height: 30vw;
+  #cover-img {
+    width: auto;
+    height: auto;
+    float: left;
+    h1 { font-size: 1.6em; }
+  }
+  #cover {
+    margin-left: 373px;
+    #typewriter1 h1 { margin-top: 100px; }
+    #intro {
+      margin-top: 1.5em;
+      font-size: 1.8em;
+      line-height: 1.5em;
+    }
+  }
+  #submenu-mobile {
+    height: 0;
+  }
+  #submenu-desktop {
+    height: 40px;
+    margin-top: 0;
+    a {
+      font-size: 1em;
+      line-height: 40px;
+      transition: 0.5s ease;
+    }
   }
 }
 
