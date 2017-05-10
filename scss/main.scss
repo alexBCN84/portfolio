@@ -197,14 +197,14 @@ a.to_nav {
     line-height: 2em;
     height: 2em;
     border-bottom: 1px solid $codGray;
+    transition: 0.5s ease;
     &:hover, &:focus {
-      color: $darkBlue;
-      background: #fff;
+      color: complement($darkBlue);
+      background: lighten($darkBlue, 9);
     }
   }
 }
-.cover {
-  height: auto;
+#cover-img {
   img { width: 100%; }
   position: relative;
   h1 {
@@ -218,11 +218,11 @@ a.to_nav {
     letter-spacing: 0.02em;
     color: #fff;
   }
-  #submenu {
-    margin-top: -7px;
-    height: 30px;
-    width: 100%;
-  }
+}
+#submenu-mobile, #submenu-desktop {
+  margin-top: -7px;
+  height: 30px;
+  width: 100%;
   a {
     height: inherit;
     @include grid(3, 0);
@@ -237,7 +237,7 @@ a.to_nav {
     font-weight: 900;
     background-color: $darkBlue;
     &:hover {
-      background: lighten($tundora, 9);
+      background: lighten($darkBlue, 9);
       color: complement(#fff);
     }
   }
@@ -358,5 +358,4 @@ footer {
   #linkedin { margin-left: 20%; }
   #github { margin-rigth: 20%; }
 }
-#cover-sidebar { display: none; }
 @import "mediaQueries";
