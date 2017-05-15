@@ -4,69 +4,88 @@
   vertical-align: middle;
 }
 
-
 @mixin navTags {
   text-decoration: none;
-  font-weight: bold;
-  line-height: 22px;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
-@mixin mQ($arg...) {
-  @if length($arg) == 1 {
-    @media screen and (min-width: nth($arg, 1)) {
-      @content;
+@mixin mobileNav {
+
+  .overlay {
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(41, 49, 50);
+    background-color: rgba(41, 49, 50, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    text-transform: uppercase;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: $alabaster;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover, .overlay a:focus {
+    color: $viking;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
     }
   }
-  @if length($arg) == 2 {
-    @media screen and (min-width: nth($arg, 1)) and (max-width: nth($arg, 2)){
-      @content;
-    }
-  }
-}
-
-@mixin grid($cols, $mgn) {
-  float: left;
-  margin-right: $mgn;
-  margin-bottom: $mgn;
-  width: ((100% - (($cols - 1) * $mgn)) / $cols );
-  &:nth-child(#{$cols}n) {
-    margin-right: 0;
-  }
-}
-
-@mixin layerIndex-1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
-}
-
-@mixin typingKeyframes {
-  @-webkit-keyframes typing { from { width: 0; } }
-  @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
 }
 
 @mixin homeSectionDisplay {
-  padding: 5% 0;
+  padding: 3vh 0;
   ul {
-    font-size: 1.2em;
-    padding-left: 5%;
-    letter-spacing: 0.1em;
+    font-size: 4vh;
+    padding-left: 5vw;
+    letter-spacing: 0.1vw;
   }
 }
 
+
 @mixin scrollingSection {
   .scroll-wrapper {
+    height: 80%;
     background: inherit;
-    margin: 20px auto;
+    margin: 4vh auto;
     text-align: center;
     position: relative;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    margin-bottom: 20px !important;
-    width: 90%;
+    width: 90vw;
   }
   .scrolls {
     overflow-x: hidden;
@@ -77,24 +96,22 @@
     article {
       display: inline-block;
       @include center;
-      width: 100%;
-      height: auto;
+      height: 100%;
       padding: 0;
       border-bottom: none;
       .arrow-testimonials {
-        margin-top: 55%;
+        margin-top: 25vh;
+
         transform: scale(1, 2);
-       }
+      }
       .arrow-code {
-        margin-top: 9%;
+        margin-top: 9vh;
         transform: scale(1, 2);
       }
     }
     blockquote {
-      display: block;
+      height: 100vh;
       width: 82%;
-      margin: 2px;
-      padding: 2%;
       cursor: pointer;
       display:inline-block;
       *display:inline;
@@ -103,32 +120,32 @@
       white-space: initial;
     }
     p {
-      padding-left: 1%;
-      font-weight: 800;
-      letter-spacing: 0.05em;
+
+      font-weight: 400;
+      letter-spacing: 0.05vw;
       transform: scale(1, 1.1);
+      line-height: 5vh;
       quotes: "\201C""\201D""\2018""\2019";
       &:before {
+        vertical-align: -1vh;
         content: open-quote;
-        font-size: 2.5em;
-        line-height: 0.1em;
-        margin-right: 0.20em;
-        vertical-align: -0.4em;
+        font-size: 6vh;
+        margin-right: 0.20vw;
+
       }
       &:after {
         content: close-quote;
-        font-size: 2.5em;
-        line-height: 0.1em;
-        margin-left: 0.20em;
-        vertical-align: -0.5em;
+        font-size: 6vh;
+        margin-left: 0.20vw;
+        vertical-align: -2vh;
       }
     }
 
-
-    img { border-radius: 50px; }
     h3{
+      margin: 2vh 2vw;
+      font-size: 4vh;
       font-variant: small-caps;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.1vw;
     }
   }
 }

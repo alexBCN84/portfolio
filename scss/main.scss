@@ -1,56 +1,11 @@
 @import "variables";
 @import "mixins";
 
-// main styles
-
-body {
-  margin: 0;
-  font: 16px/1.4em 'PT Sans', sans-serif;;
-  color: $codGray;
-}
-
-p,ul { margin: 0 0 1.5em; }
-
-ul { padding: 0 0 0 20px; }
-
-a { color: inherit; }
-h1 { line-height: 1.4em; }
-h2 {
-  font-family: 'PT Serif', serif;
-  font-size: 2em;
-  line-height: 1.4em;
-  margin: 0 0 0.4em;
-  font-weight: bold;
-}
-
-article {
-  border-bottom: 1px solid $gallery;
-  padding: 10px 20px 0 20px;
-  margin: 10px 0;
-}
-
-
-// layout
-
-.wrapper {
-  position: relative;
-  width: 100%;
-  margin: auto;
-}
-
-// aditional classes
-.divider {
-  width: 100%;
-  height: 2px;
-  background-color: $tundora;
-}
-
-.typewrite {
-  color:#000;
-  text-decoration: none;
-}
+// overall classes
 
 .section-heading {
+  margin: 0;
+  padding: 2vh 0 0 2vw;
   li {
     display: inline-block;
     font-size: 1.5em;
@@ -59,303 +14,132 @@ article {
     float: right;
     margin-right: 5%;
   }
-  margin: 0;
-  padding: 0;
 }
 
-//before page loads
-
-body {
-  background: $hippieBlue;
-  #loader {
-    position: absolute;
-    background-color: $hippieBlue;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-    width: 150px;
-    height: 150px;
-    margin: -75px 0 0 -75px;
-    border-radius: 50%;
-    border: 16px solid $hippieBlue;
-    border-top: 16px solid $red;
-    border-bottom: 16px solid $smoothYellow;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-  }
-
-
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  /* Add animation to "page content" */
-  .animate-bottom {
-    position: relative;
-    display: none;
-    -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: 1s;
-    animation-name: animatebottom;
-    animation-duration: 1s
-  }
-
-  @-webkit-keyframes animatebottom {
-    from { bottom:-100px; opacity:0 }
-    to { bottom:0px; opacity:1 }
-  }
-
-  @keyframes animatebottom {
-    from{ bottom:-100px; opacity:0 }
-    to{ bottom:0; opacity:1 }
-  }
+.wrapper {
+  height: auto;
+  background-color: $alabaster;
+  width: 100vw;
 }
-// header
+
+main {
+  height: 100vh;
+  width: 100vw;
+  background: $viking;
+}
+
 
 header {
-  background: inherit;
-  padding: 15px 20px;
-  // For IE 6/7 (trigger hasLayout)
-  zoom:1;
-  /*shorter clearfix http://nicolasgallagher.com/micro-clearfix-hack/*/
-  &:before, &:after {
-    content: "";
-    display: table;
-  }
-  &:after { clear: both; }
+  width: 90vw;
+  display: block;
+  margin: 0 auto;
+  padding: 4vh 0;
+  @include mobileNav;
 }
 
 #logo {
   i {
-    margin-top: -8px;
     float: left;
-    height: 45px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
     background: url("../img/logo.svg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
-  span {
-    margin-left: 12px;
+  div {
+    margin-left: 1.5vw;
     @include navTags;
-    color: $darkBlue;
-    font-size: 0.9em;
+    color: $white;
     float: left;
-    line-height: 15px;
-    letter-spacing: 0.2em;
-
+    line-height: 16px;
+    letter-spacing: 1px;
+    font-family: $titlesAndShowcase;
+    -webkit-font-smoothing: antialiased;
   }
+  #brand-name { font-size: 16px; }
+  #brand-prof { font-size: 10px; }
 }
 
 a.to_nav {
-  @include navTags;
   float: right;
-  color: white;
-  background: $darkBlue;
-  padding: 8px;
-  font-size: 0.8em;
-  height: 10px;
-  line-height: 10px;
-  letter-spacing: 0.1em;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  &:hover, &:focus {
-    color: $codGray;
-    background: $gallery;
+  .menu-icon {
+    color: $white;
+    font-size: 35px;
   }
 }
 
-/*navigation*/
 
-#primary_nav {
-  ul {
-    background: $darkBlue;
-    padding: 5px 0;
-    margin: 0;
-  }
-  li {
-    @include center;
-    &:last-child a { border-bottom: none; }
-  }
-  a {
-    display: block;
-    padding: 0 20px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    letter-spacing: 0.1em;
-    line-height: 2em;
-    height: 2em;
-    border-bottom: 1px solid $codGray;
-    transition: 0.5s ease;
-    &:hover, &:focus {
-      color: complement($darkBlue);
-      background: lighten($darkBlue, 9);
-    }
-  }
-}
-#cover-img {
-  img { width: 100%; }
-  position: relative;
-  h1 {
-    position: absolute;
-    display: block;
-    font-weight: 800;
-    left: 10%;
-    top: 71%;
-    transform: scale(1.2, 1.2);
-    text-shadow: 0 3px 3px #00324D;
-    letter-spacing: 0.02em;
-    color: #fff;
-  }
-}
-#submenu-mobile, #submenu-desktop {
-  margin-top: -7px;
-  height: 30px;
-  width: 100%;
-  a {
-    height: inherit;
-    @include grid(3, 0);
-    @include center;
-    color: white;
-    font-size: 0.65em;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    line-height: 30px;
-    //transform:scale(letterWidth, letterHeigth);
-    transform: scale(1, 1.1);
-    font-weight: 900;
-    background-color: $darkBlue;
-    &:hover {
-      background: lighten($darkBlue, 9);
-      color: complement(#fff);
-    }
-  }
-}
-
-#typewriter1 {
-  height: 67px;
-  h1 {
-    @include center;
-    font: bold 1.3em Consolas, Monaco, monospace;
-	  width: 90%;
-    margin: 25px 5%;
-  }
-  span { color: $darkBlue; }
-}
-
-#intro {
-  margin: 25px 5%;
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  @include center;
-  li { letter-spacing: 0.1em; }
-}
 #about {
+  height: 100vh;
+  width: 100vw;
+  background: $wedgewood;
   @include homeSectionDisplay;
-  background-color: $hippieBlue;
-  color: $gallery;
   #about-texts {
     p {
-      margin: 5%;
-      font-size: 1.2em;
+      margin: 5vh 5vw;
+      font-size: 3vh;
       font-weight: 300;
-      letter-spacing: 0.02em;
-      line-height: 1.3em;
+      letter-spacing: 0.02vw;
+      line-height: 4vh;
     }
   }
 }
-#skills {
 
+#skills {
+  height: 100vh;
+  width: 100vw;
+  background: $trout;
   @include homeSectionDisplay;
-  background-color: $red;
-  color: $smoothYellow;
-  h3,p { margin: 0 5%; }
+  h3,p { margin: 2vh 5vw; }
   h3 {
-    font-size: 1.2em;
+    font-size: 3vh;
     font-weight: 900;
-    letter-spacing: 0.05em;
-    line-height: 1.2em;
+    letter-spacing: 0.05vw;
+    line-height: 4vh
   }
   p {
-    padding-bottom: 15px;
-    font-size: 1em;
+    padding-bottom: 2vh;
+    font-size: 2vh;
     font-weight: 300;
-    letter-spacing: 0.02em;
-    line-height: 1.3em;
+    letter-spacing: 0.02vh;
+    line-height: 3vh;
   }
- }
+}
 
 #testimonials {
-  background-color: $tundora;
-  color: $gallery;
+  height: 100vh;
+  min-height: 420px;
+  width: 100vw;
+  background: $tundora;
   .scrolling-controls ul { padding: 0; }
   img {
-    width: 100px;
-    height: 100px;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 15vh;
   }
-  blockquote { height: 485px; }
+  blockquote { height: 30vh; }
   @include homeSectionDisplay;
   @include scrollingSection;
-  p { color: $gallery; }
   .linkedin-testimonials {
     position: relative;
-    top: -40px;
-    font-size: 1.5em;
+    top: -6vh;
+    font-size: 5vh;
     color: rgba(255,255,255, 0.5);
 
   }
 }
 
 #featured-code {
-  background-color: $smoothYellow;
-  color: $tundora;
-  pre { background-color: $smoothYellow; }
-  .scrolling-controls ul {
-    background-color: red;
-    color: #fff;
-    padding-left: 0;
-  }
-  blockquote { height: 750px; }
-  @include homeSectionDisplay;
-  @include scrollingSection;
-  h2 {color: $darkBlue; }
-  p{ color: $tamarilo; }
+  height: 100vh;
+  width: 100vw;
+  background: $outerSpace;
 }
-
-
-/*footer*/
 
 footer {
-  height: 50px;
-  font-family: $footerFont;
-  font-size: 0.8em;
-  border-top: solid 1px $gallery;
-  color: $darkBlue;
-  p {
-    height: inherit;
-    @include grid(3, 0);
-    @include center;
-    line-height: 50px;
-    font-variant: small-caps;
-  }
-  span {
-    transform: scale(1.0, 0.5);
-  }
-  #social { font-size: 1.8em; }
-  #linkedin { margin-left: 20%; }
-  #github { margin-rigth: 20%; }
+  height: 25vh;
+  width: 100vw;
+  background: $alabaster;
 }
+
+
 @import "mediaQueries";

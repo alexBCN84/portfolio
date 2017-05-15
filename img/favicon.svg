@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-39 -6 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic);</style>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
+    </pattern>
+  </defs>
+  <path d="M 100.26 52.923 Z" style="stroke: black; fill: none;"/>
+  <text x="196.867" y="200.731" style="font-size: 36; font-family: Roboto; white-space: pre;"> </text>
+  <ellipse cx="-6.861" cy="11.134" rx="13.883" ry="13.853" style="stroke-linejoin: round; stroke-width: 4; stroke-linecap: round; stroke: rgb(84, 122, 165); fill: rgb(84, 122, 165);" transform="matrix(1, -0.000061, 0.003032, 1, -16.143322, -1.115087)"/>
+  <path d="M -34.491 16.873 C -34.72 17.265 -24.624 -0.53 -24.308 -0.52 L -24.308 0.244 L -24.308 0.593" style="fill: none; stroke-linecap: square; stroke: rgb(255, 255, 255); stroke-width: 3;"/>
+  <path d="M -31.599 10.319 L -24.111 10.319" style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 3;"/>
+  <path d="M -20.54 18.543 L -20.726 18.543 L -17.137 18.543 L -15.038 15.981 L -13.953 14.658 L -10.578 10.54 L -16.642 10.54" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255); stroke-width: 3;"/>
+  <path d="M -21.192 -1.124 C -21.192 -1.074 -21.192 19.296 -21.192 18.876" style="fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(255, 255, 255);"/>
+  <path d="M -23.161 -1.541 L -23.161 19.459" style="fill: none; stroke-linecap: round; stroke: rgb(255, 255, 255);"/>
+  <path d="M -24.657 3.755" style="fill: none; stroke: black;"/>
+</svg>

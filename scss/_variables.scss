@@ -1,18 +1,25 @@
-// colors
-$codGray: #1c1c1c;
-$gallery: #eeeeee;
-$tundora: #4e4e4e;
+// background colors
+$white: #FFF;
+$alabaster: #F9F9F9; // wrapper & footer
+$viking: #50d8d7;  // main
+$wedgewood: #547aa5;  // about
+$trout: #4f5165;  // skills
+$tundora: #474044; // testimonials
+$outerSpace: #293132;  // featured code
 
-// live colors
+// font colors
+$seashell: #F1F1F1;
 
-$tamarilo: #a00e0e;
-$red: #d71a21;
-$smoothYellow: #f8ddab;
-$hippieBlue: #5f96ac;
-$darkBlue: #00324D;
+$complementViking: invert($viking);
+$complementAlabaster: invert($alabaster);
+$complementWedgewood: invert($wedgewood);
+$complementTrout: invert($trout);
+$complementTundora: invert($tundora);
+$complementOuterSpace: invert($outerSpace);
+
 
 
 
 // typography
 @import url('https://fonts.googleapis.com/css?family=Lato');
-$footerFont: 'Lato', sans-serif;
+$titlesAndShowcase: 'Lato', sans-serif;
