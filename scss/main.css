@@ -52,7 +52,7 @@ header {
     transition: 0.3s; }
   header .overlay a:hover, header .overlay a:focus {
     color: #50d8d7; }
-  header .overlay .closebtn {
+  header .overlay #closebtn {
     position: absolute;
     top: 20px;
     right: 45px;
@@ -60,7 +60,7 @@ header {
   @media screen and (max-height: 450px) {
     header .overlay a {
       font-size: 20px; }
-    header .overlay .closebtn {
+    header .overlay #closebtn {
       font-size: 40px;
       top: 15px;
       right: 35px; } }
@@ -69,9 +69,8 @@ header {
   float: left;
   height: 35px;
   width: 35px;
-  background: url("../img/logo.svg");
   background-size: 100% 100%;
-  background-repeat: no-repeat; }
+  background: url("../img/logo.svg") no-repeat; }
 #logo div {
   margin-left: 1.5vw;
   text-decoration: none;
@@ -224,5 +223,33 @@ footer {
   height: 25vh;
   width: 100vw;
   background: #F9F9F9; }
+
+@media only screen and (min-width: 768px) {
+  #primary_nav {
+    position: absolute;
+    top: 20px;
+    right: 8vw;
+    margin: inherit;
+    max-width: inherit;
+    background: none; }
+    #primary_nav ul {
+      background: none; }
+    #primary_nav li {
+      display: inline; }
+    #primary_nav a {
+      float: left;
+      font-weight: 300;
+      padding: 0 20px;
+      text-decoration: none;
+      letter-spacing: 1.5px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      border-bottom: none;
+      color: #FFF;
+      transition: 0.5s ease; }
+      #primary_nav a:hover, #primary_nav a:focus {
+        color: #293132;
+        text-decoration: none; } }
 
 /*# sourceMappingURL=main.css.map */

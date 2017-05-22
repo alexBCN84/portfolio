@@ -115,7 +115,6 @@ jQuery(function ($) {
         document.body.style.backgroundColor = "#fff";
       }
     },
-
     typewriter: function typewriter() {
       var TxtType = function TxtType(el, toRotate, period) {
         this.toRotate = toRotate;
@@ -282,6 +281,57 @@ var featuredCode = [{
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+var navigationTemplate = {
+    templateBranding: '<h1 id="logo"><a href="index.html"><i></i><div><span id="brand-name">Alex Gin\xE9s</span><br/><span id="brand-prof">Web Developer</span></div></a></h1>',
+    templateMenuMobile: '<a class="to_nav" id="openNav" href="#"><i class="fa fa-bars menu-icon"></i></a>\n    <!-- The overlay -->\n    <div id="myNav" class="overlay">\n\n        <!-- Button to close the overlay navigation -->\n        <a href="#" id="closebtn" class="closeNav">&times;</a>\n\n        <!-- Overlay content -->\n        <div class="overlay-content">\n            <a href="#about" class="closeNav">About</a>\n            <a href="#featured-code" class="closeNav">Code</a>\n            <a href="http://tutorialzine.com/2014/09/50-awesome-tools-and-resources-for-web-developers/" class="closeNav" target="blank">Resources</a>\n            <a href="mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com/"  class="closeNav" >Contact</a>\n            <a href="http://alexgines.com/AlejandroGinesMartinezCV.pdf" id="resume" type="application/pdf" target="blank" class="closeNav" >Resume</a>\n        </div>\n\n    </div>',
+    templateMenuDesktop: '<nav id="primary_nav">\n        <ul>\n          <li><a href="#about" class="smooth">About</a></li>\n          <li><a href="#featured-code" class="smooth">Code</a></li>\n          <li><a href="http://tutorialzine.com/2014/09/50-awesome-tools-and-resources-for-web-developers/" target="blank">Resources</a></li>\n          <li><a href="mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com." role="button">Contact</a></li>\n          <li><a href="http://alexgines.com/AlejandroGinesMartinezCV.pdf" id="resume" type="application/pdf">Resume</a></li>\n        </ul>\n      </nav><!-- end primary-nav-->',
+    controllers: function controllers() {
+        this.openNav();this.closeItems();
+    },
+    insertTemplates: function insertTemplates() {
+        this.onLoad();this.onResize();
+    },
+
+    deleteContent: function deleteContent() {
+        return document.getElementById('header').innerHTML = '';
+    },
+    onLoad: function onLoad() {
+        var width = $(window).width();
+        document.getElementById('header').innerHTML += this.templateBranding;
+        width < 768 ? (document.getElementById('header').innerHTML += this.templateMenuMobile, this.controllers()) : document.getElementById('header').innerHTML += this.templateMenuDesktop;
+    },
+    onResize: function onResize() {
+        var widthResize = $(window).resize(function () {
+            var width = $(window).width();
+            width < 768 ? (navigationTemplate.deleteContent(), document.getElementById('header').innerHTML += navigationTemplate.templateBranding, document.getElementById('header').innerHTML += navigationTemplate.templateMenuMobile, navigationTemplate.controllers()) : (navigationTemplate.deleteContent(), document.getElementById('header').innerHTML += navigationTemplate.templateBranding, document.getElementById('header').innerHTML += navigationTemplate.templateMenuDesktop);
+        });
+    },
+    openNav: function openNav() {
+        var openNav = document.getElementById('openNav');
+        openNav.addEventListener('click', function () {
+            document.getElementById('myNav').style.width = "100%";
+        });
+    },
+    closeItems: function closeItems() {
+        var itemToClose = document.querySelector('#myNav');
+        itemToClose.addEventListener('click', function (event) {
+            var elementClicked = event.target;
+            if (elementClicked.className === 'closeNav') {
+                document.getElementById('myNav').style.width = "0%";
+            }
+        });
+    }
+};
+
+navigationTemplate.insertTemplates();
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
@@ -410,7 +460,7 @@ Prism.languages.javascript = Prism.languages.extend("clike", { keyword: /\b(as|a
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -445,7 +495,6 @@ var skills = [{
 }
 
 /***/ }),
-/* 5 */,
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -509,15 +558,17 @@ var testimonials = [{
 
 __webpack_require__(1);
 
-__webpack_require__(3);
+__webpack_require__(4);
 
 __webpack_require__(0);
 
-__webpack_require__(4);
+__webpack_require__(5);
 
 __webpack_require__(6);
 
 __webpack_require__(2);
+
+__webpack_require__(3);
 
 /***/ }),
 /* 8 */

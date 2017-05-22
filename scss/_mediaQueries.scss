@@ -9,7 +9,38 @@
 
 
 @media only screen and (min-width: 768px) {
-  // Small laptop styles (wider than 768px pixels)
+  // Small laptop styles (wider than 768px pixels)#primary_nav {
+  #primary_nav {
+    ul {
+      background: none;
+    }
+    position: absolute;
+    top: 20px;
+    right: 8vw;
+    margin: inherit;
+    max-width: inherit;
+    background: none;
+    li {
+      display: inline;
+    }
+    a {
+      float: left;
+      font-weight: 300;
+      padding: 0 20px;
+      text-decoration: none;
+      letter-spacing: 1.5px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      border-bottom: none;
+      color: $white;
+      transition: 0.5s ease;
+      &:hover, &:focus {
+        color: $outerSpace;
+        text-decoration: none;
+      }
+    }
+  }
 
 }
 

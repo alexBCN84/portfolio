@@ -10,7 +10,7 @@ jQuery(function($) {
       this.smoothVerticalScroll();
       this.smoothHorizontalScroll();
     },
-    animatePreloader() {
+    animatePreloader: function () {
       //$(window).on('load', showPage());
       var loadingTime = setTimeout(showPage,1000);
       function showPage() {

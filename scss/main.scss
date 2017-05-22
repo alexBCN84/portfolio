@@ -42,9 +42,8 @@ header {
     float: left;
     height: 35px;
     width: 35px;
-    background: url("../img/logo.svg");
     background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background: url("../img/logo.svg") no-repeat;
   }
   div {
     margin-left: 1.5vw;
