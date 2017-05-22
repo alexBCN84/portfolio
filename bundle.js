@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -115,7 +115,6 @@ jQuery(function ($) {
         document.body.style.backgroundColor = "#fff";
       }
     },
-
     typewriter: function typewriter() {
       var TxtType = function TxtType(el, toRotate, period) {
         this.toRotate = toRotate;
@@ -282,6 +281,57 @@ var featuredCode = [{
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+var navigationTemplate = {
+    templateBranding: '<h1 id="logo"><a href="index.html"><i></i><div><span id="brand-name">Alex Gin\xE9s</span><br/><span id="brand-prof">Web Developer</span></div></a></h1>',
+    templateMenuMobile: '<a class="to_nav" id="openNav" href="#"><i class="fa fa-bars menu-icon"></i></a>\n    <!-- The overlay -->\n    <div id="myNav" class="overlay">\n\n        <!-- Button to close the overlay navigation -->\n        <a href="#" id="closebtn" class="closeNav">&times;</a>\n\n        <!-- Overlay content -->\n        <div class="overlay-content">\n            <a href="#about" class="closeNav">About</a>\n            <a href="#featured-code" class="closeNav">Code</a>\n            <a href="http://tutorialzine.com/2014/09/50-awesome-tools-and-resources-for-web-developers/" class="closeNav" target="blank">Resources</a>\n            <a href="mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com/"  class="closeNav" >Contact</a>\n            <a href="http://alexgines.com/AlejandroGinesMartinezCV.pdf" id="resume" type="application/pdf" target="blank" class="closeNav" >Resume</a>\n        </div>\n\n    </div>',
+    templateMenuDesktop: '<nav id="primary_nav">\n        <ul>\n          <li><a href="#about" class="smooth">About</a></li>\n          <li><a href="#featured-code" class="smooth">Code</a></li>\n          <li><a href="http://tutorialzine.com/2014/09/50-awesome-tools-and-resources-for-web-developers/" target="blank">Resources</a></li>\n          <li><a href="mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com." role="button">Contact</a></li>\n          <li><a href="http://alexgines.com/AlejandroGinesMartinezCV.pdf" id="resume" type="application/pdf">Resume</a></li>\n        </ul>\n      </nav><!-- end primary-nav-->',
+    controllers: function controllers() {
+        this.openNav();this.closeItems();
+    },
+    insertTemplates: function insertTemplates() {
+        this.onLoad();this.onResize();
+    },
+
+    deleteContent: function deleteContent() {
+        return document.getElementById('header').innerHTML = '';
+    },
+    onLoad: function onLoad() {
+        var width = $(window).width();
+        document.getElementById('header').innerHTML += this.templateBranding;
+        width < 768 ? (document.getElementById('header').innerHTML += this.templateMenuMobile, this.controllers()) : document.getElementById('header').innerHTML += this.templateMenuDesktop;
+    },
+    onResize: function onResize() {
+        var widthResize = $(window).resize(function () {
+            var width = $(window).width();
+            width < 768 ? (navigationTemplate.deleteContent(), document.getElementById('header').innerHTML += navigationTemplate.templateBranding, document.getElementById('header').innerHTML += navigationTemplate.templateMenuMobile, navigationTemplate.controllers()) : (navigationTemplate.deleteContent(), document.getElementById('header').innerHTML += navigationTemplate.templateBranding, document.getElementById('header').innerHTML += navigationTemplate.templateMenuDesktop);
+        });
+    },
+    openNav: function openNav() {
+        var openNav = document.getElementById('openNav');
+        openNav.addEventListener('click', function () {
+            document.getElementById('myNav').style.width = "100%";
+        });
+    },
+    closeItems: function closeItems() {
+        var itemToClose = document.querySelector('#myNav');
+        itemToClose.addEventListener('click', function (event) {
+            var elementClicked = event.target;
+            if (elementClicked.className === 'closeNav') {
+                document.getElementById('myNav').style.width = "0%";
+            }
+        });
+    }
+};
+
+navigationTemplate.insertTemplates();
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
@@ -407,10 +457,10 @@ Prism.languages.markup = { comment: /<!--[\w\W]*?-->/, prolog: /<\?[\w\W]+?\?>/,
 Prism.languages.css = { comment: /\/\*[\w\W]*?\*\//, atrule: { pattern: /@[\w-]+?.*?(;|(?=\s*\{))/i, inside: { rule: /@[\w-]+/ } }, url: /url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i, selector: /[^\{\}\s][^\{\};]*?(?=\s*\{)/, string: { pattern: /("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, property: /(\b|\B)[\w-]+(?=\s*:)/i, important: /\B!important\b/i, "function": /[-a-z0-9]+(?=\()/i, punctuation: /[(){};:]/ }, Prism.languages.css.atrule.inside.rest = Prism.util.clone(Prism.languages.css), Prism.languages.markup && (Prism.languages.insertBefore("markup", "tag", { style: { pattern: /(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i, lookbehind: !0, inside: Prism.languages.css, alias: "language-css" } }), Prism.languages.insertBefore("inside", "attr-value", { "style-attr": { pattern: /\s*style=("|').*?\1/i, inside: { "attr-name": { pattern: /^\s*style/i, inside: Prism.languages.markup.tag.inside }, punctuation: /^\s*=\s*['"]|['"]\s*$/, "attr-value": { pattern: /.+/i, inside: Prism.languages.css } }, alias: "language-css" } }, Prism.languages.markup.tag));
 Prism.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\w\W]*?\*\//, lookbehind: !0 }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: !0 }], string: { pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, "class-name": { pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i, lookbehind: !0, inside: { punctuation: /(\.|\\)/ } }, keyword: /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/, "boolean": /\b(true|false)\b/, "function": /[a-z0-9_]+(?=\()/i, number: /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/, punctuation: /[{}[\];(),.:]/ };
 Prism.languages.javascript = Prism.languages.extend("clike", { keyword: /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/, number: /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/, "function": /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*\*?|\/|~|\^|%|\.{3}/ }), Prism.languages.insertBefore("javascript", "keyword", { regex: { pattern: /(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/, lookbehind: !0, greedy: !0 } }), Prism.languages.insertBefore("javascript", "string", { "template-string": { pattern: /`(?:\\\\|\\?[^\\])*?`/, greedy: !0, inside: { interpolation: { pattern: /\$\{[^}]+\}/, inside: { "interpolation-punctuation": { pattern: /^\$\{|\}$/, alias: "punctuation" }, rest: Prism.languages.javascript } }, string: /[\s\S]+/ } } }), Prism.languages.markup && Prism.languages.insertBefore("markup", "tag", { script: { pattern: /(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i, lookbehind: !0, inside: Prism.languages.javascript, alias: "language-javascript" } }), Prism.languages.js = Prism.languages.javascript;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -445,7 +495,7 @@ var skills = [{
 }
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -500,7 +550,7 @@ var testimonials = [{
 }
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -508,20 +558,20 @@ var testimonials = [{
 
 __webpack_require__(1);
 
-__webpack_require__(3);
-
-__webpack_require__(10);
+__webpack_require__(4);
 
 __webpack_require__(0);
 
-__webpack_require__(4);
-
 __webpack_require__(5);
+
+__webpack_require__(6);
 
 __webpack_require__(2);
 
+__webpack_require__(3);
+
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 var g;
@@ -546,45 +596,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-/* 8 */,
-/* 9 */,
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var submenu = {
-  O1: 'testimonials',
-  O2: 'featured code',
-  O3: 'contact me',
-  email: 'mailto:alejandro.ginesmartinez@gmail.com?subject=Contact%20from%20alexgines.com'
-};
-
-{
-  var submenuTemplate = '<a href="#testimonials" class="smooth">' + submenu.O1 + '<i class="fa fa-quote-right"></i></a>\n  <a href="#featured-code" class="smooth">' + submenu.O2 + '<i class="fa fa-code"></i></a>\n  <a href="' + submenu.email + '" rolle="button">' + submenu.O3 + ' <i class="fa fa-envelope-o"></i></a>';
-
-  var responsiveSubmenu = {
-    deleteContent: function deleteContent() {
-      document.getElementById('submenu-mobile').innerHTML = '';
-      document.getElementById('submenu-desktop').innerHTML = '';
-    },
-    onLoad: function onLoad() {
-      var width = $(window).width();
-      width < 768 ? document.getElementById('submenu-mobile').innerHTML += submenuTemplate : document.getElementById('submenu-desktop').innerHTML += submenuTemplate;
-    },
-    onResize: function onResize() {
-      var widthResize = $(window).resize(function () {
-        var width = $(window).width();
-        width < 768 ? (responsiveSubmenu.deleteContent(), document.getElementById('submenu-mobile').innerHTML += submenuTemplate) : (responsiveSubmenu.deleteContent(), document.getElementById('submenu-desktop').innerHTML += submenuTemplate);
-      });
-    }
-  };
-  responsiveSubmenu.onLoad();
-  responsiveSubmenu.onResize();
-}
 
 /***/ })
 /******/ ]);
