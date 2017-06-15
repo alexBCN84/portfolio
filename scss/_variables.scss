@@ -23,3 +23,9 @@ $complementOuterSpace: invert($outerSpace);
 // typography
 @import url('https://fonts.googleapis.com/css?family=Lato');
 $titlesAndShowcase: 'Lato', sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Hind');
+$bigHeadings: 'Hind', sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+$subHeadings: 'Inconsolata', monospace;

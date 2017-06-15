@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Hind");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
 .section-heading {
   margin: 0;
   padding: 2vh 0 0 2vw;
@@ -123,6 +125,31 @@ a.to_nav {
 a.to_nav .menu-icon {
   color: #FFF;
   font-size: 35px;
+}
+
+#landingBlock {
+  margin: 20vh 20vw;
+  color: #FFF;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#landingBlock h1 {
+  font: 7vh "Hind", sans-serif;
+}
+
+#landingBlock #subheading {
+  font: 4vh "Inconsolata", monospace;
+  line-height: 7vh;
+}
+
+#landingBlock #divider {
+  width: 100%;
+  height: 1vh;
+  margin-bottom: 3vh;
+  background: #FFF;
+  border: 1% solid #FFF;
+  border-radius: 50%;
 }
 
 #about {
@@ -306,7 +333,6 @@ footer {
 @media only screen and (min-width: 768px) {
   #primary_nav {
     position: absolute;
-    top: 20px;
     right: 8vw;
     margin: inherit;
     max-width: inherit;
