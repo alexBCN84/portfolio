@@ -153,6 +153,9 @@ a.to_nav .menu-icon {
 }
 
 #landingBlock .button {
+  font-weight: 300;
+  letter-spacing: 0.2vw;
+  transform: scale(1.05, 1);
   text-align: center;
   vertical-align: middle;
   border: 5px solid #F9F9F9;
@@ -441,6 +444,15 @@ footer {
   #primary_nav a:hover, #primary_nav a:focus {
     color: #293132;
     text-decoration: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #landingBlock #btn-testimonials {
+    margin-left: 20%;
+  }
+  #landingBlock #btn-featured-code {
+    margin-right: 30%;
   }
 }
 

@@ -87,6 +87,10 @@ a.to_nav {
   }
 
   .button {
+    font-weight: 300;
+    letter-spacing: 0.2vw;
+    transform: scale(1.05, 1);
+
     @include center;
     border: 5px solid $alabaster;
     color: $white;

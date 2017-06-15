@@ -95,7 +95,10 @@
 
 @media only screen and (min-width: 1024px) {
   // Large laptop styles (wider than 1024 pixels)
-
+  #landingBlock {
+    #btn-testimonials { margin-left: 20%; }
+    #btn-featured-code { margin-right: 30%; }
+  }
 }
 
 @media only screen and (min-width: 1140px) {
