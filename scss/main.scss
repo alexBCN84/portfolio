@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixins";
 
+
 // overall classes
 
 .section-heading {
@@ -67,77 +68,121 @@ a.to_nav {
   }
 }
 
+#landingBlock {
+  margin: 10vh 10vw;
+  color: $white;
+  @include center;
+  h1 { font: 5vh $bigHeadings; }
+  #subheading {
+    font: 3vh $subHeadings;
+    line-height: 4vh;
+  }
+  #divider {
+    width: 100%;
+    height: 1vh;
+    margin-bottom: 5vh;
+    background: $white;
+    border: 1% solid $white;
+    border-radius: 50%;
+  }
 
-#about {
-  height: 100vh;
-  width: 100vw;
-  background: $wedgewood;
-  @include homeSectionDisplay;
-  #about-texts {
-    p {
-      margin: 5vh 5vw;
-      font-size: 3vh;
-      font-weight: 300;
-      letter-spacing: 0.02vw;
-      line-height: 4vh;
+  .button {
+    font-weight: 300;
+    letter-spacing: 0.2vw;
+    transform: scale(1.05, 1);
+
+    @include center;
+    border: 5px solid $alabaster;
+    color: $white;
+    padding: 2%;
+    border-radius: 5px;
+    transition: 0.3s;
+    &:hover {
+      text-decoration: none;
+      border-color: $viking;
+      background-color: $outerSpace;
     }
   }
+  #more-buttons {
+    margin-top: 15vh;
+    li {
+      margin-bottom: 5vh;
+      margin-top: 5vh;
+    }
+  }
+
+}
+
+#about {
+height: 100vh;
+width: 100vw;
+background: $wedgewood;
+@include homeSectionDisplay;
+#about-texts {
+  p {
+    margin: 5vh 5vw;
+    font-size: 3vh;
+    font-weight: 300;
+    letter-spacing: 0.02vw;
+    line-height: 4vh;
+  }
+}
 }
 
 #skills {
-  height: 100vh;
-  width: 100vw;
-  background: $trout;
-  @include homeSectionDisplay;
-  h3,p { margin: 2vh 5vw; }
-  h3 {
-    font-size: 3vh;
-    font-weight: 900;
-    letter-spacing: 0.05vw;
-    line-height: 4vh
-  }
-  p {
-    padding-bottom: 2vh;
-    font-size: 2vh;
-    font-weight: 300;
-    letter-spacing: 0.02vh;
-    line-height: 3vh;
-  }
+height: 100vh;
+width: 100vw;
+background: $trout;
+@include homeSectionDisplay;
+h3,p { margin: 2vh 5vw; }
+h3 {
+  font-size: 3vh;
+  font-weight: 900;
+  letter-spacing: 0.05vw;
+  line-height: 4vh
+}
+p {
+  padding-bottom: 2vh;
+  font-size: 2vh;
+  font-weight: 300;
+  letter-spacing: 0.02vh;
+  line-height: 3vh;
+}
 }
 
 #testimonials {
-  height: 100vh;
-  min-height: 420px;
-  width: 100vw;
-  background: $tundora;
-  .scrolling-controls ul { padding: 0; }
-  img {
-    width: 15vh;
-    height: 15vh;
-    border-radius: 15vh;
-  }
-  blockquote { height: 30vh; }
-  @include homeSectionDisplay;
-  @include scrollingSection;
-  .linkedin-testimonials {
-    position: relative;
-    top: -6vh;
-    font-size: 5vh;
-    color: rgba(255,255,255, 0.5);
+height: 100vh;
+min-height: 420px;
+width: 100vw;
+background: $tundora;
+.scrolling-controls ul { padding: 0; }
+img {
+  width: 15vh;
+  height: 15vh;
+  border-radius: 15vh;
+}
+blockquote { height: 30vh; }
+@include homeSectionDisplay;
+@include scrollingSection;
+.linkedin-testimonials {
+  position: relative;
+  top: -6vh;
+  font-size: 5vh;
+  color: rgba(255,255,255, 0.5);
 
-  }
+}
 }
 
 #featured-code {
-  height: 100vh;
-  width: 100vw;
-  background: $outerSpace;
+height: 100vh;
+width: 100vw;
+background: $outerSpace;
 }
 
 footer {
-  height: 25vh;
-  width: 100vw;
-  background: $alabaster;
+height: 25vh;
+width: 100vw;
+background: $alabaster;
 }
 
 
