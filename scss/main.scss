@@ -69,22 +69,44 @@ a.to_nav {
 }
 
 #landingBlock {
-  margin: 20vh 20vw;
+  margin: 10vh 10vw;
   color: $white;
   @include center;
-  h1 { font: 7vh $bigHeadings; }
+  h1 { font: 5vh $bigHeadings; }
   #subheading {
-    font: 4vh $subHeadings;
-    line-height: 7vh;
+    font: 3vh $subHeadings;
+    line-height: 4vh;
   }
   #divider {
     width: 100%;
     height: 1vh;
-    margin-bottom: 3vh;
+    margin-bottom: 5vh;
     background: $white;
     border: 1% solid $white;
     border-radius: 50%;
   }
+
+  .button {
+    @include center;
+    border: 5px solid $alabaster;
+    color: $white;
+    padding: 2%;
+    border-radius: 5px;
+    transition: 0.3s;
+    &:hover {
+      text-decoration: none;
+      border-color: $viking;
+      background-color: $outerSpace;
+    }
+  }
+  #more-buttons {
+    margin-top: 15vh;
+    li {
+      margin-bottom: 5vh;
+      margin-top: 5vh;
+    }
+  }
+
 }
 
 #about {

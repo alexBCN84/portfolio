@@ -1,15 +1,65 @@
 @media only screen and (min-width: 321px) {
   //Larger mobile styles (wider than 320 pixels)
+  #landingBlock {
+    #more-buttons {
+      margin-top: 15vh;
+      li {
+        margin-bottom: 5vh;
+        margin-top: 5vh;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 600px) {
   //Tablet styles (wider than 600 pixels)
+
+  #landingBlock {
+    margin: 15vh 15vw;
+    h1 { font: 7vh $bigHeadings; }
+    #subheading {
+      font: 4vh $subHeadings;
+      line-height: 7vh;
+    }
+
+    .button {
+      border: 5px solid $viking;
+      margin-top: 10vh;
+      color: $white;
+      padding: 2%;
+      border-radius: 5px;
+      transition: 0.3s;
+      background-color: $outerSpace;
+      &:hover {
+        text-decoration: none;
+        border-color: $alabaster;
+        background-color: $viking;
+      }
+    }
+    #more-buttons {
+      margin-top: -50px;
+      margin-bottom: 5vh;
+      li { margin-top: 0vh;}
+    }
+    #btn-testimonials {
+      @include center;
+      margin-left: 15%;
+      float: left;
+    }
+    #btn-featured-code {
+      @include center;
+      margin-right: 15%;
+      float: right;
+    }
+  }
+
 
 }
 
 
 @media only screen and (min-width: 768px) {
   // Small laptop styles (wider than 768px pixels)#primary_nav {
+
   #primary_nav {
     ul {
       background: none;
@@ -45,8 +95,21 @@
 
 @media only screen and (min-width: 1024px) {
   // Large laptop styles (wider than 1024 pixels)
+
 }
 
 @media only screen and (min-width: 1140px) {
   // Desktop styles (wider than 1140 pixels)
+  #landingBlock {
+    #btn-testimonials {
+      @include center;
+      margin-left: 30%;
+      float: left;
+    }
+    #btn-featured-code {
+      @include center;
+      margin-right: 30%;
+      float: right;
+    }
+  }
 }
