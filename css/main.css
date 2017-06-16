@@ -167,8 +167,6 @@ a.to_nav .menu-icon {
 
 #landingBlock .button:hover {
   text-decoration: none;
-  border-color: #50d8d7;
-  background-color: #293132;
 }
 
 #landingBlock #more-buttons {
@@ -185,6 +183,7 @@ a.to_nav .menu-icon {
   width: 100vw;
   background: #547aa5;
   padding: 3vh 0;
+  color: #F9F9F9;
 }
 
 #about ul {
@@ -358,7 +357,7 @@ footer {
   background: #F9F9F9;
 }
 
-@media only screen and (min-width: 321px) {
+@media only screen and (min-width: 300px) {
   #landingBlock #more-buttons {
     margin-top: 15vh;
   }
