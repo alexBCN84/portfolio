@@ -11,10 +11,11 @@ var about = [
 ];
 
 {
+
   var i = about.length;
   while(i--) {
     const aboutTemplate =
-    `<p>${about[i].p}</p>`;
+    `<p>${about[i].p}</p><br/>`;
     document.getElementById('about-texts').innerHTML += aboutTemplate;
   };
 }

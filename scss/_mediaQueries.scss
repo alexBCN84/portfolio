@@ -1,57 +1,73 @@
-@media only screen and (min-width: 300px) {
-  //Larger mobile styles (wider than 320 pixels)
+@media only screen and (min-width: 450px) {
+  //Landscape mobile styles (wider than 450 pixels)
   #landingBlock {
-    #more-buttons {
-      margin-top: 15vh;
-      li {
-        margin-bottom: 5vh;
-        margin-top: 5vh;
-      }
+    #subheading {
+      font-size: 5vw;
+      line-height: 5vw;
+    }
+    .button {
+      font-size: 4vw;
     }
   }
+  #about img {
+    max-width: 30vw;
+    max-height: 70vh;
+  }
+
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 620px) {
   //Tablet styles (wider than 600 pixels)
 
   #landingBlock {
     margin: 15vh 15vw;
-    h1 { font: 7vh $bigHeadings; }
+    h1 { font: 4vw $bigHeadings; }
     #subheading {
-      font: 4vh $subHeadings;
+      font: 3vw $subHeadings;
       line-height: 7vh;
     }
-
     .button {
-
-      margin-top: 10vh;
-      color: $white;
-      padding: 2%;
-      transition: 0.3s;
+      display:inline-block;
+      color: $alabaster;
+      letter-spacing: 1px;
+      font-family: $titlesAndShowcase;
+      font-size: 3vw;
+      border: none;
       background-color: $outerSpace;
-      &:hover {
+      padding: 3%;
+      transition: 0.6s;
+      &:hover, &:focus {
         text-decoration: none;
         background-color: $viking;
       }
-    }
-    #more-buttons {
-      margin-top: -50px;
-      margin-bottom: 5vh;
-      li { margin-top: 0vh;}
-    }
+     }
+
     #btn-testimonials {
-      @include center;
-      margin-left: 15%;
+      margin-left: 10%;
       float: left;
     }
     #btn-featured-code {
-      @include center;
-      margin-right: 15%;
+      margin-top: 0px;
+      margin-right: 10%;
       float: right;
     }
   }
+  #about {
+    img {
+      max-height: 70vh;
+      max-width: 25vw;
+    }
+    #about-container div:nth-child(2){ margin-top: 5vh; }
+    #about-texts p {
+        font-size: 4vh;
+        line-height: 5vh;
+    }
+  }
 
-
+  #skills {
+    h3 { font-size: 5vh; }
+    p { font-size: 3vh; }
+  }
 }
 
 
@@ -88,29 +104,138 @@
       }
     }
   }
-
+  #about { background-attachment: fixed; }
+  #about #about-container img {
+    max-width: 30vw;
+  }
+  #skills {
+    h3 { font-size: 3vh; }
+    p { font-size: 2vh; }
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   // Large laptop styles (wider than 1024 pixels)
+
   #landingBlock {
-    #btn-testimonials { margin-left: 20%; }
-    #btn-featured-code { margin-right: 30%; }
+    h1 { font-size: 4vw; }
+    #subheading { font-size: 3vw; }
   }
+  #about {
+    #about-container div:nth-child(2) { margin-top: 10vh; }
+    #about-texts p {
+    margin-left: 10vw;
+    font-size: 4vh;
+  }
+  img { width: 25vw; }
+  }
+  #testimonials {
+    .scroll-wrapper { width: 100%; }
+  }
+
+  #featured-code {
+    .scroll-wrapper { width: 100%; }
+  }
+
 }
 
 @media only screen and (min-width: 1140px) {
   // Desktop styles (wider than 1140 pixels)
   #landingBlock {
+    h1 { font: 3vw $bigHeadings; }
+    #subheading {
+      font: 6vh $subHeadings;
+      line-height: 7vh;
+    }
+    .button {
+
+      font-size: 2vw;
+      padding: 2%;
+     }
+
     #btn-testimonials {
-      @include center;
-      margin-left: 30%;
-      float: left;
+      margin-left: 20%;
     }
     #btn-featured-code {
-      @include center;
-      margin-right: 30%;
-      float: right;
+      margin-right: 20%;
+    }
+  }
+  #about {
+    #about-container div:nth-child(2) { margin-top: 5vh; }
+    #about-texts p {
+      font-size: 4vh;
+      line-height: 6vh;
+    }
+    img { width: 20vw; }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #landingBlock {
+    #subheading { line-height: 6vh; }
+  }
+}
+@media (min-height: 1280px) and (min-width: 800px) {
+  #skills {
+    h3 {
+      font-size: 3vh;
+      line-height: 4vh;
+    }
+    p {
+      font-size: 2vh;
+      line-height: 3vh;
+    }
+  }
+}
+@media (min-height: 2560px) and (min-width: 1600px) {
+  // Kindle Fire HDX portrait
+  #primary_nav {
+    a {
+      font-size: 2vw;
+      padding: 0 40px;
+      letter-spacing: 3px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+  }
+
+  #landingBlock {
+    h1 { font-size: 6vw; }
+    #subheading {
+      font-size: 4vw;
+      line-height: 4vh;
+    }
+    .button { font-size: 3vw; }
+  }
+  #skills {
+    h3 {
+      font-size: 3vh;
+      line-height: 4vh;
+    }
+    p {
+      font-size: 2vh;
+      line-height: 3vh;
+    }
+  }
+
+}
+
+@media only screen and (min-width: 2560px) {
+  // tv format
+  #primary_nav {
+    a { font-size: 2vw;}
+  }
+
+  #logo {
+    i {
+      height: 70px;
+      width: 70px;
+    }
+    #brand-name { font-size: 1vw; }
+    #brand-prof {
+      line-height: 40px;
+      font-size: 1vw;
     }
   }
 }
