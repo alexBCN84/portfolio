@@ -1,7 +1,11 @@
 @import "variables";
 @import "mixins";
 
-
+html {
+  ::-webkit-scrollbar {
+    display: none;
+}
+}
 // overall classes
 
 .section-heading {
@@ -195,7 +199,10 @@ a.to_nav {
   .scroll-wrapper { height: 140vh; }
   background-color: $outerSpace;
   color: $alabaster;
+  blockquote { overflow: hidden; }
   pre {
+    overflow-y: scroll;
+    overflow-x: scroll;
     background-color: $outerSpace;
     max-height: 55vh;
     .language-javascript, .language-html, .language-css {

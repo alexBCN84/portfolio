@@ -5,6 +5,10 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 @import url("https://fonts.googleapis.com/css?family=Kreon");
 @import url("https://fonts.googleapis.com/css?family=Lato");
+html ::-webkit-scrollbar {
+  display: none;
+}
+
 .section-heading {
   margin: 0;
   padding: 2vh 0 0 2vw;
@@ -470,7 +474,13 @@ a.to_nav .menu-icon {
   height: 140vh;
 }
 
+#featured-code blockquote {
+  overflow: hidden;
+}
+
 #featured-code pre {
+  overflow-y: scroll;
+  overflow-x: scroll;
   background-color: #293132;
   max-height: 55vh;
 }
