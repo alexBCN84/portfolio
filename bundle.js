@@ -272,7 +272,7 @@ var featuredCode = [{
 {
   var i = featuredCode.length;
   while (i--) {
-    var featuredTemplate = '<article id="' + featuredCode[i].id + '">\n      <a href="' + featuredCode[i].previous + '" class="smooth-featured-code"><i class="fa fa-angle-double-left arrow-code"></i></a>\n      <blockquote>\n\n        <h2>' + featuredCode[i].title + '</h2>\n        <h3>' + featuredCode[i].tools + '</h3></br>\n        <pre><code class="' + featuredCode[i].language + '">' + featuredCode[i].code + '</code></pre>\n        <h2>...</h2>\n        <a href="' + featuredCode[i].github + '">More code on <i class="fa fa-github-square"></i></a>\n      </blockquote>\n      <a href="' + featuredCode[i].next + '" class="smooth-featured-code"><i class="fa fa-angle-double-right arrow-code"></i></a>\n    </article>';
+    var featuredTemplate = '<article id="' + featuredCode[i].id + '">\n      <a href="' + featuredCode[i].previous + '" class="smooth-featured-code"><i class="fa fa-angle-double-left arrow-code"></i></a>\n      <blockquote>\n\n        <h2>' + featuredCode[i].title + '</h2>\n        <h3>' + featuredCode[i].tools + '</h3></br>\n        <pre><code class="' + featuredCode[i].language + '">' + featuredCode[i].code + '</code></pre>\n        <br/><br/>\n        <a href="' + featuredCode[i].github + '">More code on <i class="fa fa-github-square"></i></a>\n      </blockquote>\n      <a href="' + featuredCode[i].next + '" class="smooth-featured-code"><i class="fa fa-angle-double-right arrow-code"></i></a>\n    </article>';
     document.getElementById('scroll-featured-code').innerHTML += featuredTemplate;
   };
 }

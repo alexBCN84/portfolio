@@ -10,14 +10,6 @@ $outerSpace: #293132;  // featured code
 // font colors
 $seashell: #F1F1F1;
 
-$complementViking: invert($viking);
-$complementAlabaster: invert($alabaster);
-$complementWedgewood: invert($wedgewood);
-$complementTrout: invert($trout);
-$complementTundora: invert($tundora);
-$complementOuterSpace: invert($outerSpace);
-
-
 
 
 // typography
@@ -35,3 +27,6 @@ $textBody : 'Josefin Sans', sans-serif;
 
 @import url('https://fonts.googleapis.com/css?family=Kreon');
 $typewriter: 'Kreon', serif;
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+$footerFont: 'Lato', sans-serif;

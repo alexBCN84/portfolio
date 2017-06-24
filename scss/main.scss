@@ -1,7 +1,11 @@
 @import "variables";
 @import "mixins";
 
-
+html {
+  ::-webkit-scrollbar {
+    display: none;
+}
+}
 // overall classes
 
 .section-heading {
@@ -190,18 +194,71 @@ a.to_nav {
     color: rgba(255,255,255, 0.5);
   }
 }
-
 #featured-code {
-  height: 100vh;
   width: 100vw;
-  background: $outerSpace;
+  .scroll-wrapper { height: 140vh; }
+  background-color: $outerSpace;
+  color: $alabaster;
+  blockquote { overflow: hidden; }
+  pre {
+    overflow-y: scroll;
+    overflow-x: scroll;
+    background-color: $outerSpace;
+    max-height: 55vh;
+    .language-javascript, .language-html, .language-css {
+      font-size: 2vh;
+      line-height: 2vh;
+    }
+    .token.function { color: #A569BD; }
+    .token.atrule,
+    .token.attr-value,
+    .token.keyword { color: #48C9B0; }
+  }
+  .scrolling-controls ul {
+    background-color: red;
+    color: #fff;
+    padding-left: 0;
+  }
+  blockquote {
+    max-height: 100vh;
+    a {
+      margin-left: -5%;
+      bottom: 0;
+      color: $viking;
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+  @include homeSectionDisplay;
+  @include scrollingSection;
+  h2 {color: $alabaster; }
+  p{ color: $alabaster; }
 }
 
 footer {
-  height: 25vh;
+  height: 10vh;
   width: 100vw;
-  background: $alabaster;
+  font-family: $footerFont;
+  font-size: 2vh;
+  border-top: solid 1px $trout;
+  color: $outerSpace;
+  background: $seashell;
+  a { color: $viking; }
+  p {
+    height: inherit;
+    @include grid(3, 0);
+    @include center;
+    line-height: 10vh;
+    font-variant: small-caps;
+  }
+  span {
+    transform: scale(1.0, 0.5);
+  }
+  #social { font-size: 1.8em; }
+  #linkedin { margin-left: 20%; }
+  #github { margin-right: 20%; }
+  .fa { color: $outerSpace; }
 }
-
 
 @import "mediaQueries";

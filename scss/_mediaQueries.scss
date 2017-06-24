@@ -112,6 +112,20 @@
     h3 { font-size: 3vh; }
     p { font-size: 2vh; }
   }
+  #featured-code {
+    pre {
+      max-height: 55vh;
+      .language-javascript, .language-html, .language-css {
+        font-size: 2.5vh;
+        line-height: 3.5vh;
+      }
+    }
+    blockquote a {
+      margin-top: 5%;
+      font-size: 3vh;
+      position: relative;
+    }
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -135,6 +149,7 @@
 
   #featured-code {
     .scroll-wrapper { width: 100%; }
+    blockquote a { position: absolute; }
   }
 
 }
@@ -187,6 +202,23 @@
     }
   }
 }
+@media (min-height: 1280px) and (min-width: 800px) {
+  // nexus 10
+  #featured-code {
+    pre {
+      max-height: 55vh;
+      .language-javascript, .language-html, .language-css {
+        font-size: 2.5vh;
+        line-height: 3.5vh;
+      }
+    }
+    blockquote a {
+      margin-top: 5%;
+      font-size: 4vh;
+      position: relative;
+    }
+  }
+}
 @media (min-height: 2560px) and (min-width: 1600px) {
   // Kindle Fire HDX portrait
   #primary_nav {
@@ -218,6 +250,20 @@
       line-height: 3vh;
     }
   }
+  #featured-code {
+    pre {
+      max-height: 55vh;
+      .language-javascript, .language-html, .language-css {
+        font-size: 2.5vh;
+        line-height: 3.5vh;
+      }
+    }
+    blockquote a {
+      margin-top: 5%;
+      font-size: 4vh;
+      position: relative;
+    }
+  }
 
 }
 
@@ -236,6 +282,26 @@
     #brand-prof {
       line-height: 40px;
       font-size: 1vw;
+    }
+  }
+  #testimonials {
+    .scrolls p {
+      font-size: 5vh;
+      line-height: 6vh;
+    }
+  }
+  #featured-code {
+    pre {
+      max-height: 70vh;
+      .language-javascript, .language-html, .language-css {
+        font-size: 2.5vh;
+        line-height: 3.5vh;
+      }
+    }
+    blockquote a {
+      margin-top: 5%;
+      font-size: 4vh;
+      position: relative;
     }
   }
 }
