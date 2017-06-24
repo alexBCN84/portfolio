@@ -102,7 +102,7 @@ addEntry: function(entryTitle, entryText) {
         <h2>${featuredCode[i].title}</h2>
         <h3>${featuredCode[i].tools}</h3></br>
         <pre><code class="${featuredCode[i].language}">${featuredCode[i].code}</code></pre>
-        <h2>...</h2>
+        <br/><br/>
         <a href="${featuredCode[i].github}">More code on <i class="fa fa-github-square"></i></a>
       </blockquote>
       <a href="${featuredCode[i].next}" class="smooth-featured-code"><i class="fa fa-angle-double-right arrow-code"></i></a>

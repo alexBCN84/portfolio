@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css?family=Inconsolata");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 @import url("https://fonts.googleapis.com/css?family=Kreon");
+@import url("https://fonts.googleapis.com/css?family=Lato");
 .section-heading {
   margin: 0;
   padding: 2vh 0 0 2vw;
@@ -459,15 +460,277 @@ a.to_nav .menu-icon {
 }
 
 #featured-code {
-  height: 100vh;
   width: 100vw;
-  background: #293132;
+  background-color: #293132;
+  color: #F9F9F9;
+  padding: 3vh 0;
+}
+
+#featured-code .scroll-wrapper {
+  height: 140vh;
+}
+
+#featured-code pre {
+  background-color: #293132;
+  max-height: 55vh;
+}
+
+#featured-code pre .language-javascript, #featured-code pre .language-html, #featured-code pre .language-css {
+  font-size: 2vh;
+  line-height: 2vh;
+}
+
+#featured-code pre .token.function {
+  color: #A569BD;
+}
+
+#featured-code pre .token.atrule,
+#featured-code pre .token.attr-value,
+#featured-code pre .token.keyword {
+  color: #48C9B0;
+}
+
+#featured-code .scrolling-controls ul {
+  background-color: red;
+  color: #fff;
+  padding-left: 0;
+}
+
+#featured-code blockquote {
+  max-height: 100vh;
+}
+
+#featured-code blockquote a {
+  margin-left: -5%;
+  bottom: 0;
+  color: #50d8d7;
+}
+
+#featured-code blockquote a:hover, #featured-code blockquote a:focus {
+  text-decoration: none;
+}
+
+#featured-code ul {
+  font-size: 4vh;
+  padding-left: 5vw;
+  letter-spacing: 0.1vw;
+}
+
+#featured-code .scroll-wrapper {
+  height: 80%;
+  background: inherit;
+  margin: 4vh auto;
+  text-align: center;
+  position: relative;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  width: 90vw;
+}
+
+#featured-code .scrolls {
+  height: auto;
+  white-space: nowrap;
+}
+
+#featured-code .scrolls article {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  height: 100%;
+  padding: 0;
+  border-bottom: none;
+  width: 30%;
+}
+
+#featured-code .scrolls article > a {
+  display: none;
+}
+
+#featured-code .scrolls blockquote {
+  height: 100vh;
+  width: 80%;
+  cursor: pointer;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  white-space: initial;
+}
+
+#featured-code .scrolls p {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 3vh;
+  font-weight: 400;
+  letter-spacing: 0.05vw;
+  transform: scale(1, 1.1);
+  line-height: 4vh;
+  quotes: "“" "”" "‘" "’";
+}
+
+#featured-code .scrolls p:before {
+  vertical-align: -1vh;
+  content: open-quote;
+  font-size: 6vh;
+  margin-right: 0.20vw;
+}
+
+#featured-code .scrolls p:after {
+  content: close-quote;
+  font-size: 6vh;
+  margin-left: 0.20vw;
+  vertical-align: -2vh;
+}
+
+#featured-code .scrolls h3 {
+  color: #50d8d7;
+  margin: 2vh 2vw;
+  font-size: 4vh;
+  font-variant: small-caps;
+  letter-spacing: 0.1vw;
+}
+
+@media only screen and (max-width: 1023px) {
+  #featured-code .scrolls {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  #featured-code .scrolls article {
+    width: 100%;
+  }
+  #featured-code .scrolls article > a {
+    display: inline;
+  }
+  #featured-code .scrolls .arrow-testimonials {
+    margin-top: 25vh;
+    transform: scale(1, 2);
+  }
+  #featured-code .scrolls .arrow-code {
+    margin-top: 9vh;
+    transform: scale(1, 2);
+  }
+  #featured-code .scrolls blockquote {
+    width: 82%;
+  }
+}
+
+@media (min-height: 1366px) and (min-width: 1024px) {
+  #featured-code .scrolls {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  #featured-code .scrolls article {
+    width: 100%;
+  }
+  #featured-code .scrolls article > a {
+    display: inline;
+  }
+  #featured-code .scrolls .arrow-testimonials {
+    margin-top: 25vh;
+    transform: scale(4, 6);
+  }
+  #featured-code .scrolls .arrow-code {
+    margin-top: 9vh;
+    transform: scale(4, 6);
+  }
+  #featured-code .scrolls blockquote {
+    width: 82%;
+  }
+}
+
+@media (min-height: 2560px) and (min-width: 1600px) {
+  #featured-code .scrolls {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  #featured-code .scrolls article {
+    width: 100%;
+  }
+  #featured-code .scrolls article > a {
+    display: inline;
+  }
+  #featured-code .scrolls .arrow-testimonials {
+    margin-top: 25vh;
+    transform: scale(4, 6);
+  }
+  #featured-code .scrolls .arrow-code {
+    margin-top: 9vh;
+    transform: scale(4, 6);
+  }
+  #featured-code .scrolls blockquote {
+    width: 82%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #featured-code .scrolls h2 {
+    font-size: 3vh;
+  }
+  #featured-code .scrolls h3 {
+    font-size: 4vh;
+  }
+  #featured-code .scrolls p {
+    font-size: 2.5vh;
+    line-height: 3.2vh;
+  }
+}
+
+#featured-code h2 {
+  color: #F9F9F9;
+}
+
+#featured-code p {
+  color: #F9F9F9;
 }
 
 footer {
-  height: 25vh;
+  height: 10vh;
   width: 100vw;
-  background: #F9F9F9;
+  font-family: "Lato", sans-serif;
+  font-size: 2vh;
+  border-top: solid 1px #4f5165;
+  color: #293132;
+  background: #F1F1F1;
+}
+
+footer a {
+  color: #50d8d7;
+}
+
+footer p {
+  height: inherit;
+  float: left;
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 33.33333%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
+  font-variant: small-caps;
+}
+
+footer p:nth-child(3n) {
+  margin-right: 0;
+}
+
+footer span {
+  transform: scale(1, 0.5);
+}
+
+footer #social {
+  font-size: 1.8em;
+}
+
+footer #linkedin {
+  margin-left: 20%;
+}
+
+footer #github {
+  margin-right: 20%;
+}
+
+footer .fa {
+  color: #293132;
 }
 
 @media only screen and (min-width: 450px) {
@@ -581,6 +844,18 @@ footer {
   #skills p {
     font-size: 2vh;
   }
+  #featured-code pre {
+    max-height: 55vh;
+  }
+  #featured-code pre .language-javascript, #featured-code pre .language-html, #featured-code pre .language-css {
+    font-size: 2.5vh;
+    line-height: 3.5vh;
+  }
+  #featured-code blockquote a {
+    margin-top: 5%;
+    font-size: 3vh;
+    position: relative;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -605,6 +880,9 @@ footer {
   }
   #featured-code .scroll-wrapper {
     width: 100%;
+  }
+  #featured-code blockquote a {
+    position: absolute;
   }
 }
 
@@ -655,6 +933,21 @@ footer {
   }
 }
 
+@media (min-height: 1280px) and (min-width: 800px) {
+  #featured-code pre {
+    max-height: 55vh;
+  }
+  #featured-code pre .language-javascript, #featured-code pre .language-html, #featured-code pre .language-css {
+    font-size: 2.5vh;
+    line-height: 3.5vh;
+  }
+  #featured-code blockquote a {
+    margin-top: 5%;
+    font-size: 4vh;
+    position: relative;
+  }
+}
+
 @media (min-height: 2560px) and (min-width: 1600px) {
   #primary_nav a {
     font-size: 2vw;
@@ -682,6 +975,18 @@ footer {
     font-size: 2vh;
     line-height: 3vh;
   }
+  #featured-code pre {
+    max-height: 55vh;
+  }
+  #featured-code pre .language-javascript, #featured-code pre .language-html, #featured-code pre .language-css {
+    font-size: 2.5vh;
+    line-height: 3.5vh;
+  }
+  #featured-code blockquote a {
+    margin-top: 5%;
+    font-size: 4vh;
+    position: relative;
+  }
 }
 
 @media only screen and (min-width: 2560px) {
@@ -698,5 +1003,21 @@ footer {
   #logo #brand-prof {
     line-height: 40px;
     font-size: 1vw;
+  }
+  #testimonials .scrolls p {
+    font-size: 5vh;
+    line-height: 6vh;
+  }
+  #featured-code pre {
+    max-height: 70vh;
+  }
+  #featured-code pre .language-javascript, #featured-code pre .language-html, #featured-code pre .language-css {
+    font-size: 2.5vh;
+    line-height: 3.5vh;
+  }
+  #featured-code blockquote a {
+    margin-top: 5%;
+    font-size: 4vh;
+    position: relative;
   }
 }
