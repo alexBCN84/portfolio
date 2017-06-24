@@ -88,8 +88,6 @@
     width: 90vw;
   }
   .scrolls {
-    overflow-x: hidden;
-    overflow-y: hidden;
     height: auto;
     white-space:nowrap;
 
@@ -99,19 +97,12 @@
       height: 100%;
       padding: 0;
       border-bottom: none;
-      .arrow-testimonials {
-        margin-top: 25vh;
-
-        transform: scale(1, 2);
-      }
-      .arrow-code {
-        margin-top: 9vh;
-        transform: scale(1, 2);
-      }
+      width: 30%;
     }
+    article> a { display: none; }
     blockquote {
       height: 100vh;
-      width: 82%;
+      width: 80%;
       cursor: pointer;
       display:inline-block;
       *display:inline;
@@ -120,11 +111,12 @@
       white-space: initial;
     }
     p {
-
+      font-family: $textBody;
+      font-size: 3vh;
       font-weight: 400;
       letter-spacing: 0.05vw;
       transform: scale(1, 1.1);
-      line-height: 5vh;
+      line-height: 4vh;
       quotes: "\201C""\201D""\2018""\2019";
       &:before {
         vertical-align: -1vh;
@@ -142,10 +134,82 @@
     }
 
     h3{
+      color: $viking;
       margin: 2vh 2vw;
       font-size: 4vh;
       font-variant: small-caps;
       letter-spacing: 0.1vw;
     }
+  }
+  @media only screen and (max-width: 1023px) {
+    .scrolls {
+      article { width: 100%; }
+      article> a { display: inline; }
+      overflow-x: hidden;
+      overflow-y: hidden;
+      .arrow-testimonials {
+        margin-top: 25vh;
+
+        transform: scale(1, 2);
+      }
+      .arrow-code {
+        margin-top: 9vh;
+        transform: scale(1, 2);
+      }
+      blockquote {
+        width: 82%;
+      }
+    }
+  }
+  @media (min-height: 1366px) and (min-width: 1024px) {
+    .scrolls {
+      article { width: 100%; }
+      article> a { display: inline; }
+      overflow-x: hidden;
+      overflow-y: hidden;
+      .arrow-testimonials {
+        margin-top: 25vh;
+
+        transform: scale(4, 6);
+      }
+      .arrow-code {
+        margin-top: 9vh;
+        transform: scale(4, 6);
+      }
+      blockquote {
+        width: 82%;
+      }
+    }
+  }
+  @media (min-height: 2560px) and (min-width: 1600px) {
+    .scrolls {
+      article { width: 100%; }
+      article> a { display: inline; }
+      overflow-x: hidden;
+      overflow-y: hidden;
+      .arrow-testimonials {
+        margin-top: 25vh;
+
+        transform: scale(4, 6);
+      }
+      .arrow-code {
+        margin-top: 9vh;
+        transform: scale(4, 6);
+      }
+      blockquote {
+        width: 82%;
+      }
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .scrolls {
+      h2 { font-size: 3vh; }
+      h3 { font-size: 4vh; }
+
+      p {
+        font-size: 2.5vh;
+        line-height: 3.2vh;
+      }
+     }
   }
 }
