@@ -518,7 +518,7 @@ var testimonials = [{
   img: 'img/Kave_bulambo.jpg',
   link: 'https://www.linkedin.com/in/kave-bulambo-a090bb32/',
   name: 'Kave Bulambo',
-  title: 'Communications & Brand Consulting <br/>at Zalando SE',
+  title: 'Tech Placement Specialist at CareerFoundry',
   testimonial: 'Alex is an inspirational young professional who has successfully transitioned his career from teaching to software engineering. Working with him  was absolutely delightful and showed me his courage and tenacity  for challenges bigger than himself.',
   previous: '#ref2',
   next: '#ref1'
