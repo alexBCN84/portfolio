@@ -284,7 +284,7 @@ var featuredCode = [{
 "use strict";
 
 
-var template = '<div id="front-page">\n          <h1>Front-end  &amp; Ruby on Rails Developer</h1>\n          <div id="divider"></div>\n          <ul class="intro-list">\n            <li id="subheading">I\'m passionate about the web and I proudly turn my passion into my career</li>\n          </ul>\n          <div id="more-buttons">\n            <a href="#testimonials" id="btn-testimonials" class="smooth button">testimonials</a>\n            <a href="#featured-code" id="btn-featured-code" class="smooth button">featured code</a>\n          </div>\n        </div>';
+var template = '<div id="front-page">\n          <h1>Fullstack JS developer</h1>\n          <div id="divider"></div>\n          <ul class="intro-list">\n            <li id="subheading">I\'m passionate about the web and I proudly turn my passion into my career</li>\n          </ul>\n          <div id="more-buttons">\n            <a href="#testimonials" id="btn-testimonials" class="smooth button">testimonials</a>\n            <a href="#featured-code" id="btn-featured-code" class="smooth button">featured code</a>\n          </div>\n        </div>';
 
 document.getElementById('landingBlock').innerHTML += template;
 
