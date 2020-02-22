@@ -1,10 +1,8 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Lato");
-@import url("https://fonts.googleapis.com/css?family=Hind");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata");
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
-@import url("https://fonts.googleapis.com/css?family=Kreon");
-@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Lato|Hind|Inconsolata|Josefin+Sans");
+
+@import './prism.css';
+@import './reset.css';
 html ::-webkit-scrollbar {
   display: none;
 }
