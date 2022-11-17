@@ -26,8 +26,8 @@
     "node-sass": "^3.13.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "sass-loader": "^4.1.1",
-    "webpack": "^2.4.1"
+    "sass-loader": "^13.2.0",
+    "webpack": "^5.75.0"
   },
   "dependencies": {
     "jquery": "^3.2.1"
